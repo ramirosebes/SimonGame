@@ -1,0 +1,142 @@
+/*-------------------- Header --------------------*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #202020;
+}
+
+.logo {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 3rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.open-menu,
+.close-menu {
+    display: block;
+    border: 0;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.open-menu {
+    color: white;
+}
+
+.close-menu {
+    color: white;
+}
+
+.nav {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #202020;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+}
+
+.nav.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-list {
+    flex-direction: column;
+    align-items: end;
+}
+
+.nav-list li a {
+    color: #ecececec;
+}
+
+/*-------------------- Main --------------------*/
+body {
+    text-align: center;
+    background-color: #272727;
+}
+
+.btnSimon {  /*button*/
+    margin: 20px;
+    padding: 15px;
+    background-color: #ccc;
+    font-size: 16px;
+    color: #222;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    width: 150px;
+    height: 50px;
+}
+
+#level-title {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 3rem;
+    margin:  5%;
+    color: white;
+}
+
+.container {
+    display: block;
+    width: 50%;
+    margin: auto;
+
+}
+
+.btn {
+    margin: 25px;
+    display: inline-block;
+    height: 200px;
+    width: 200px;
+    border: 10px solid black;
+    border-radius: 20%;
+}
+
+.game-over {
+    background-color: red;
+    opacity: 0.8;
+}
+
+.red {
+    background-color: #EE6352;
+}
+
+.green {
+    background-color: #57A773;
+}
+
+.blue {
+    background-color: #08B2E3;
+}
+
+.yellow {
+    background-color: #FFDF64;
+}
+
+.pressed {
+    box-shadow: 0 0 20px white;
+    background-color: grey;
+}

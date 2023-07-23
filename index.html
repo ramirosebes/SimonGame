@@ -1,32 +1,44 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-  <meta charset="utf-8">
-  <title>Simon</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
-</head>
-
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Simon</title>
+        <link rel="stylesheet" href="./style/reset.css">
+        <link rel="stylesheet" href="./style/indexStyle.css">
+        <!-- <link rel="stylesheet" href="./style/nav.css"> -->
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    </head>
 <body>
-  <h1 id="level-title">Press Start button to start</h1>
-  <div class="container">
-    <div lass="row">
-      <div type="button" id="green" class="btn green"></div>
-      <div type="button" id="red" class="btn red"></div>
-    </div>
-    <div class="row">
-      <div type="button" id="yellow" class="btn yellow"></div>
-      <div type="button" id="blue" class="btn blue"></div>
-    </div>
-  </div>
-  <div class="controls">
-    <button id="startBtn" class="control">Start</button>
-    <button id="resetBtn" class="control">Reset</button>
-</div>
-  <script src="index.js" charset="utf-8"></script>
-
-
+    <header>
+        <h1 class="logo">Simon Game</h1>
+        <button id="open" class="open-menu"><img src="./img/menu.svg" alt="menu-hamburger"></i></button>
+        <nav class="nav" id="nav">
+            <button class="close-menu" id="close"><img src="./img/cross.svg" alt="cross"></button>
+            <ul class="nav-list">
+                <li><a href="#">Ranking</a></li>
+                <li><a href="./form.html" target="_blank">Contact Us</a></li>
+                <li><a href="https://github.com/ramirosebes/SimonGame" target="_blank">Repository</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2 id="level-title">Press Start button to start</h2>
+        <div class="container">
+            <div class="row">
+                <button id="green" class="btn green btnSimon"></button>
+                <button id="red" class="btn red btnSimon"></button>
+            </div>
+            <div class="row">
+                <button id="yellow" class="btn yellow btnSimon"></button>
+                <button id="blue" class="btn blue btnSimon"></button>
+            </div>
+        </div>
+        <div class="controls">
+            <button id="startBtn" class="control btnSimon">Start</button>
+            <button id="resetBtn" class="control btnSimon">Reset</button>
+        </div>
+    </main>
+    <script src="./js/indexNav.js" charset="utf-8"></script>
+    <script src="./js/simon.js"></script>
 </body>
-
 </html>
