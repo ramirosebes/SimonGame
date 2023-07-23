@@ -28,7 +28,7 @@ document.getElementById("resetBtn").addEventListener("click", function() {
 });
 
 // Eventos para los botones de colores
-var buttons = document.querySelectorAll(".btn");
+var buttons = document.querySelectorAll(".btnSimon");
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function() {
         if (started) {
