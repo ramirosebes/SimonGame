@@ -1,0 +1,240 @@
+/*-------------------- Header --------------------*/
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    background-color: #202020;
+}
+
+.logo {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 2rem;
+}
+
+.nav-list {
+    list-style-type: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.open-menu,
+.close-menu {
+    display: block;
+    border: 0;
+    font-size: 1.25rem;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.open-menu {
+    color: white;
+}
+
+.close-menu {
+    color: white;
+}
+
+.nav {
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 2rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #202020;
+    padding: 2rem;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+}
+
+.nav.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-list {
+    flex-direction: column;
+    align-items: end;
+}
+
+.nav-list li a {
+    color: #ecececec;
+}
+
+/*-------------------- Main --------------------*/
+body {
+    background-color: #272727;
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contactUs {
+    font-size: 50px;
+    margin-block: 3rem 1rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+label {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    cursor: pointer;
+}
+
+input {
+    border: none;
+    width: 400px;
+    height: 30px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding-inline: 10px;
+    border-radius: 5px;
+}
+
+textarea {
+    border: none;
+    width: 400px;
+    height: 250px;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    padding: 10px 10px 0 10px;
+    border-radius: 5px;
+    resize: none;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+#inputSubmit {
+    margin-top: 1rem;
+    width: 100px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.form__input:focus {
+    border: 3px solid grey;
+	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+    outline: none;
+}
+
+/*-------------------- Prueba --------------------*/
+
+/*---------- Validaciones Inputs ----------*/
+.form__input-error {
+    font-size: 12px;
+    margin-top: 10px;
+    display: none;
+    max-width: 400px;
+}
+
+.form__input-error-active {
+    display: block;
+    font-size: 12px;
+    margin-top: 10px;
+}
+
+.form_group-corect .form__label {
+    color: #1ed12d;
+}
+
+.form__group-correct{
+    color: #1ed12d;
+	opacity: 1;
+}
+
+.form__group-correct .form__input {
+    border: 3px solid #1ed12d;
+}
+
+.form__group-incorrect .form__label {
+    color: #bb2929;
+}
+
+.form__group-incorrect {
+    color: #bb2929;
+	opacity: 1;
+}
+
+.form__group-incorrect .form__input {
+    border: 3px solid #bb2929;
+}
+
+/*---------- Message----------*/
+.form__message p {
+    margin: 0;
+}
+.form__message {
+    height: 45px;
+    line-height: 45px;
+    background: #F66060;
+    padding: 0 15px;
+    border-radius: 3px;
+    margin-top: 10px;
+    display: none;
+}
+
+.form__message-active {
+    display: block;
+}
+
+.form__message-successful {
+    margin-top: 20px;
+    font-size: 20px;
+	color: #119200;
+	display: none;
+}
+
+.form__message-successful-active {
+    display: block;
+}
+
+.form__group-btn-send {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buttonSend {
+    margin-top: 1rem;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+}
+
+#buttonSend a {
+    font-family: 'Press Start 2P', cursive;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+}
