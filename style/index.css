@@ -135,8 +135,13 @@ body {
     opacity: 0.8;
 }
 
-
 .pressed {
     box-shadow: 0 0 20px white;
     background-color: grey;
+}
+
+.time {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
 }

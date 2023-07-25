@@ -5,18 +5,20 @@ var userClickedPattern = [];
 var started = false;
 var level = 0;
 
-// Evento para el botón "Start"
+// Start button
 document.getElementById("startBtn").addEventListener("click", function() {
     if (!started) {
         document.getElementById("level-title").textContent = "Level " + level;
         started = true;
+        restartTime();
+        startTime();
         setTimeout(function() {
             nextSequence();
         }, 750); //Tiempo a que se encienda el boton
     }
 });
 
-// Evento para el botón "Reset"
+// Resert button
 document.getElementById("resetBtn").addEventListener("click", function() {
     if (started) {
         document.getElementById("level-title").textContent = "Press Start button to start";
@@ -24,6 +26,8 @@ document.getElementById("resetBtn").addEventListener("click", function() {
         gamePattern = [];
         level = 0;
         started = false;
+        stopTime();
+        restartTime();
     }
 });
 
@@ -61,9 +65,10 @@ function checkAnswer(currentLevel) {
         document.body.classList.add("game-over");
         setTimeout(function() {
             document.body.classList.remove("game-over");
-        }, 200);
+        }, 750);
 
         document.getElementById("level-title").textContent = "Game over, Press start button to Restart";
+        stopTime();
 
         startOver();
     }
@@ -106,4 +111,44 @@ function startOver() {
     level = 0;
     gamePattern = [];
     started = false;
+}
+
+//---------- Timer ----------
+var timeRef = Date.now();
+var timeCount = false;
+var accumulated = 0;
+
+function startTime() {
+    timeCount = true;
+}
+
+function stopTime() {
+    timeCount = false;
+}
+
+function restartTime() {
+    accumulated = 0;
+}
+
+setInterval(function() {
+    var time = document.getElementById("time");
+    if (timeCount) {
+        accumulated += Date.now() - timeRef;
+    }
+    timeRef = Date.now();
+    time.innerHTML = formatMS(accumulated);
+}, 1000 / 60);
+
+function formatMS(time_ms) {
+    var MS = time_ms % 1000;
+    var St = Math.floor((time_ms - MS) / 1000);
+    var S = St % 60;
+    var M = Math.floor(St / 60) % 60;
+    var H = Math.floor(St / 60 / 60);
+
+    Number.prototype.ceros = function(n) {
+        return (this + "").padStart(n, 0);
+    }
+
+    return H.ceros(2) + ":" + M.ceros(2) + ":" + S.ceros(2) + "." + MS.ceros(3);
 }
