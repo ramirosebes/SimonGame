@@ -1,33 +1,49 @@
-// STEP 1
 var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
 var started = false;
 var level = 0;
+var userScore = 0;
+var totalScore = 0;
+
+var gameData = {
+    userName: "",
+    finalTime: "",
+    finalScore: 0,
+    totalScore: 0,
+};
 
 // Start button
 document.getElementById("startBtn").addEventListener("click", function() {
     if (!started) {
         document.getElementById("level-title").textContent = "Level " + level;
         started = true;
-        restartTime();
-        startTime();
         setTimeout(function() {
             nextSequence();
         }, 750); //Tiempo a que se encienda el boton
+        //----- Timer -----
+        restartTime();
+        startTime();
+        //----- Score -----
+        userScore = 0;
+        document.getElementById('score').innerHTML = "Score: " + userScore;
     }
 });
 
 // Resert button
 document.getElementById("resetBtn").addEventListener("click", function() {
     if (started) {
-        document.getElementById("level-title").textContent = "Press Start button to start";
+        document.getElementById("level-title").textContent = "Press Start button to start.";
         userClickedPattern = [];
         gamePattern = [];
         level = 0;
         started = false;
+        //----- Timer -----
         stopTime();
         restartTime();
+        //----- Score -----
+        userScore = 0;
+        document.getElementById('score').innerHTML = "Score: " + userScore;
     }
 });
 
@@ -43,6 +59,14 @@ for (var i = 0; i < buttons.length; i++) {
             animatePress(userChosenColor);
 
             checkAnswer(userClickedPattern.length - 1);
+
+            //----- Score ----- 
+            //Me permite que no se agregue 100+ cuando se equivoca
+            var bodyElement = document.body;
+            if (!bodyElement.classList.contains("game-over")) {
+                userScore += 100;
+                document.getElementById('score').innerHTML = "Score: " + userScore;
+            }
         }
     });
 }
@@ -67,14 +91,25 @@ function checkAnswer(currentLevel) {
             document.body.classList.remove("game-over");
         }, 750);
 
-        document.getElementById("level-title").textContent = "Game over, Press start button to Restart";
-        stopTime();
+        document.getElementById("level-title").textContent = "Game over, Press start button to Restart.";
 
+        //----- Timer -----
+        stopTime();
+        //-----------------
+
+        //----- Gamedata -----
+        var timeElapsedInSeconds = accumulated / 1000;
+        totalScore = Math.round(userScore / timeElapsedInSeconds);
+
+        // Actualizar el objeto gameData con la información relevante
+        gameData.finalTime = document.getElementById('time').textContent;
+        gameData.finalScore = userScore;
+        gameData.totalScore = totalScore;
+        //--------------------
         startOver();
     }
 }
 
-// STEP 2
 function nextSequence() {
     userClickedPattern = [];
     level++;
@@ -111,6 +146,12 @@ function startOver() {
     level = 0;
     gamePattern = [];
     started = false;
+
+    // //----- Gamedata -----
+    // var gameOverMessage = "Time: " + gameData.finalTime +
+    //                         "\nScore: " + gameData.finalScore +
+    //                         "\nTotal Score: " + gameData.totalScore;
+    // alert("Game Over!\n\n" + gameOverMessage);
 }
 
 //---------- Timer ----------

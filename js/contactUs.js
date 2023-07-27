@@ -50,26 +50,6 @@ inputs.forEach(function(input) {
 textarea.addEventListener('keyup', validateForm);
 textarea.addEventListener('blur', validateForm);
 
-// form.addEventListener('submit', function(e) {
-//     e.preventDefault(); //evita que haga la funcion degault de submit
-
-//     if (fields.name && fields.email && fields.textarea ) {
-//         form.reset();
-
-//         document.getElementById('form_message-successful').classList.add('form__message-successful-active');
-//         setTimeout(() => {
-// 			document.getElementById('form_message-successful').classList.remove('form__message-successful-active');
-//             document.getElementById('group__name').classList.remove('form__group-correct');
-//             document.getElementById('group__email').classList.remove('form__group-correct');
-//             document.getElementById('group__textarea').classList.remove('form__group-correct');
-// 		}, 3000);
-
-//         document.getElementById('form__message').classList.remove('form__message-active')
-//     } else {
-//         document.getElementById('form__message').classList.add('form__message-active')
-//     }
-// });
-
 var buttonSend = document.getElementById('buttonSend');
 
 buttonSend.addEventListener('click', function(e) {

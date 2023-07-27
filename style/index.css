@@ -140,8 +140,13 @@ body {
     background-color: grey;
 }
 
-.time {
+.time, .score {
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 30px;
+}
+
+/*------------------ Form -------------------*/
+.hide {
+    display: none;
 }

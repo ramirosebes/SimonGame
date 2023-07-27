@@ -21,29 +21,53 @@
         </nav>
     </header>
     <main>
-        <h2 id="level-title">Press Start button to start</h2>
 
-        <div class="time" id="time">
-            00:00:00.000
-        </div>
+        <section class="enterName hide">
+            <form action="" class="formClass" id="formClass">
+                <div class="form__group" id="group__name">
+                    <label for="name" class="form__label">Plase, enter your name.</label>
+                    <div class="form__group-input">
+                        <input type="text" name="name" id="inputName" placeholder="Name" class="form__input">
+                    </div>
+                    <p class="form__input-error">You must complete de field.</p>
+                    <div>
+                        <button id="buttonSend" class="form__btn">Send</button>
+                    </div>
+                </div>
+            </form>
+        </section>
 
-        </div>
-        <div class="container">
-            <div class="row">
-                <button id="green" class="green btnSimon"></button>
-                <button id="red" class="red btnSimon"></button>
+        <section class="simonGame">
+            <h2 id="level-title">Press Start button to start.</h2>
+
+            <div class="time" id="time">
+                00:00:00.000
             </div>
-            <div class="row">
-                <button id="yellow" class="yellow btnSimon"></button>
-                <button id="blue" class="blue btnSimon"></button>
+    
             </div>
-        </div>
+            <div class="container">
+                <div class="row">
+                    <button id="green" class="green btnSimon"></button>
+                    <button id="red" class="red btnSimon"></button>
+                </div>
+                <div class="row">
+                    <button id="yellow" class="yellow btnSimon"></button>
+                    <button id="blue" class="blue btnSimon"></button>
+                </div>
+            </div>
+    
+            <div id="score" class="score">
+                Score:
+            </div>
+    
+            <div class="controls">
+                <button id="startBtn" class="control btn">Start</button>
+                <button id="resetBtn" class="control btn">Reset</button>
+            </div>
+        </section>
 
-        <div class="controls">
-            <button id="startBtn" class="control btn">Start</button>
-            <button id="resetBtn" class="control btn">Reset</button>
-        </div>
     </main>
+    <script src="./js/modals.js"></script>
     <script src="./js/navBar.js" charset="utf-8"></script>
     <script src="./js/simon.js"></script>
 </body>
