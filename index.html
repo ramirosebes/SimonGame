@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     </head>
 <body>
-    <header>
+    <header class="headerClass">
         <h1 class="logo">Simon Game</h1>
         <button id="open" class="open-menu"><img src="./img/menu.svg" alt="menu-hamburger"></i></button>
         <nav class="nav" id="nav">
@@ -22,7 +22,7 @@
     </header>
     <main>
 
-        <section class="enterName hide">
+        <section class="enterName hide" id="enterName">
             <form action="" class="formClass" id="formClass">
                 <div class="form__group" id="group__name">
                     <label for="name" class="form__label">Plase, enter your name.</label>
@@ -30,8 +30,8 @@
                         <input type="text" name="name" id="inputName" placeholder="Name" class="form__input">
                     </div>
                     <p class="form__input-error">You must complete de field.</p>
-                    <div>
-                        <button id="buttonSend" class="form__btn">Send</button>
+                    <div class="form__group-btn-send">
+                        <button id="buttonSend" class="form__btn"">Start</button>
                     </div>
                 </div>
             </form>

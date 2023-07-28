@@ -1,52 +1,73 @@
-// var form = document.getElementById('formClass');
-// var inputs = document.querySelectorAll('#formClass input');
+var sectionForm = document.getElementById('enterName');
+var form = document.getElementById('formClass');
+var inputs = document.querySelectorAll('#formClass input');
 
-// var expressions = {
-//     name: /^[a-zA-Z0-9]{1,}$/,
-// }
+var expressions = {
+    name: /^[a-zA-Z0-9]{1,}$/,
+}
 
-// var fields = {
-//     name: false,
-// }
+var fields = {
+    name: false,
+}
 
-// function validateForm(e) {
-// 	switch (e.target.name) {
-//         case "name":
-//             validateField(expressions.name, e.target, 'name');
-//             break;
-//     }
-// }
+function validateForm(e) {
+	switch (e.target.name) {
+        case "name":
+            validateField(expressions.name, e.target, 'name');
+            break;
+    }
+}
 
-// function validateField(expression, input, field) {
-//     if(expression.test(input.value)) {
-//         document.getElementById(`group__${field}`).classList.remove('form__group-incorrect');
-//         document.getElementById(`group__${field}`).classList.add('form__group-correct');
-//         document.querySelector(`#group__${field} .form__input-error`).classList.remove('form__input-error-active');
-//         fields[field] = true;
-//     } else {
-//         document.getElementById(`group__${field}`).classList.add('form__group-incorrect');
-//         document.getElementById(`group__${field}`).classList.remove('form__group-correct');
-//         document.querySelector(`#group__${field} .form__input-error`).classList.add('form__input-error-active');
-//         fields[field] = false;
-//     }
-// }1
+function validateField(expression, input, field) {
+    if(expression.test(input.value)) {
+        document.getElementById(`group__${field}`).classList.remove('form__group-incorrect');
+        document.getElementById(`group__${field}`).classList.add('form__group-correct');
+        document.querySelector(`#group__${field} .form__input-error`).classList.remove('form__input-error-active');
+        fields[field] = true;
+    } else {
+        document.getElementById(`group__${field}`).classList.add('form__group-incorrect');
+        document.getElementById(`group__${field}`).classList.remove('form__group-correct');
+        document.querySelector(`#group__${field} .form__input-error`).classList.add('form__input-error-active');
+        fields[field] = false;
+    }
+}1
 
-// inputs.forEach(function(input) {
-//     input.addEventListener('keyup', validateForm);
-//     input.addEventListener('blur', validateForm);
-// });
+inputs.forEach(function(input) {
+    input.addEventListener('keyup', validateForm);
+    input.addEventListener('blur', validateForm);
+});
 
-// var buttonSend = document.getElementById('buttonSend');
+var buttonSend = document.getElementById('buttonSend');
 
-// buttonSend.addEventListener('click', function(e) {
-//     if (fields.name) {
-//         form.reset();
-//         setTimeout(() => {
-//             document.getElementById('group__name').classList.remove('form__group-correct');
-// 		}, 1000);
+buttonSend.addEventListener('click', function(e) {
+    if (fields.name) {
+        form.reset();
+        e.preventDefault();
+        document.getElementById('group__name').classList.remove('form__group-correct');
+        
+        
 
-//         document.getElementById('form__message').classList.remove('form__message-active');
-//     } else {
-//         e.preventDefault(); //evita que haga la funcion degault de submit
-//     }
-// });
+        //----- Codigo simon.js -----
+        if (!started) {
+            sectionForm.classList.add('hide');
+            document.getElementById("level-title").textContent = "Level " + level;
+            started = true;
+            setTimeout(function() {
+                nextSequence();
+            }, 750); //Tiempo a que se encienda el boton
+            //----- Timer -----
+            restartTime();
+            startTime();
+            //----- Score -----
+            userScore = 0;
+            document.getElementById('score').innerHTML = "Score: " + userScore;
+        }
+        //------------------------------------------------------------------------
+        
+    } else {
+        e.preventDefault(); //evita que haga la funcion degault de submit
+        document.getElementById(`group__name`).classList.add('form__group-incorrect');
+        document.getElementById(`group__name`).classList.remove('form__group-correct');
+        document.querySelector(`#group__name .form__input-error`).classList.add('form__input-error-active');
+    }
+});

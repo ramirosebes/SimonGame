@@ -81,7 +81,7 @@ body {
 #level-title {
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
-    margin: 3rem;
+    margin-block: 2rem; /*margin: 3rem;*/
     color: white;
 }
 
@@ -147,6 +147,90 @@ body {
 }
 
 /*------------------ Form -------------------*/
+.enterName {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    justify-content: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+
+    font-family: 'Press Start 2P', cursive;
+    background-color: #202020;
+    color: white;
+    padding: 30px;
+    border-radius:10px;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+}
+
+.form__label {
+    font-size: 30px;
+}
+
+.form__input{
+    margin-block: 20px;
+    width: 500px;
+    height: 50px;
+    font-size: 15px;
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+    border-radius: 5px;
+}
+
+.form__input:focus {
+    border: 3px solid grey;
+    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+    outline: none;
+}
+
+.form__input-error{
+    margin-bottom: 20px;
+    display: none;
+}
+
+.form__input-error-active {
+    display: block;
+}
+
+.form_group-corect .form__label {
+    color: #1ed12d;
+}
+
+.form__group-correct{
+    color: #1ed12d;
+	opacity: 1;
+}
+
+.form__group-correct .form__input {
+    border: 3px solid #1ed12d;
+}
+
+.form__group-incorrect .form__label {
+    color: #bb2929;
+}
+
+.form__group-incorrect {
+    color: #bb2929;
+	opacity: 1;
+}
+
+.form__group-incorrect .form__input {
+    border: 3px solid #bb2929;
+}
+
+.form__btn {
+    font-family: 'Press Start 2P', cursive;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
 .hide {
     display: none;
 }
