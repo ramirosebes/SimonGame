@@ -45,7 +45,8 @@ buttonSend.addEventListener('click', function(e) {
         e.preventDefault();
         document.getElementById('group__name').classList.remove('form__group-correct');
         
-        
+        gameData.userName = document.getElementById('inputName').value;
+        fields.name = false; //Validacion para que al apretar restart y luego ingresar de nuevo el formulario no te deje mandarlo de una
 
         //----- Codigo simon.js -----
         if (!started) {

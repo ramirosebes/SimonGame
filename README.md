@@ -49,6 +49,9 @@ El proyecto se desarrollará utilizando las siguientes tecnologías:
 
 3. **JavaScript:** Para la lógica del juego, generación de secuencias, interacción con el usuario, seguimiento de la puntuación y niveles.
 
+## Link GitHub Pages
+https://ramirosebes.github.io/SimonGame/
+
 ## Entrega y Evaluación
 El proyecto será entregado en formato de sitio web, y deberá estar alojado en un servidor para que pueda ser accesible en línea. La evaluación del proyecto se basará en la funcionalidad, diseño y usabilidad de la aplicación.
 

@@ -1,3 +1,4 @@
+//-------------------- Variables --------------------
 var buttonColors = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
 var userClickedPattern = [];
@@ -7,6 +8,7 @@ var userScore = 0;
 var totalScore = 0;
 var userName = " ";
 
+//-------------------- Objetos --------------------
 var gameData = {
     userName: " ",
     finalTime: "",
@@ -110,10 +112,16 @@ function checkAnswer(currentLevel) {
         totalScore = Math.round(userScore / timeElapsedInSeconds);
 
         // Actualizar el objeto gameData con la información relevante
+        // gameData.userName = document.getElementById('inputName').value;
         gameData.finalTime = document.getElementById('time').textContent;
         gameData.finalScore = userScore;
         gameData.totalScore = totalScore;
+
+        // var inputEnterName = document.getElementById('inputName');
+        // gameData.userName = inputEnterName.
         //--------------------
+
+        //Hacer una funcion que guarde en localStorage todos los datos y se llame aca abajo una vez que el jugador se equivoca
         startOver();
     }
 }
@@ -156,11 +164,11 @@ function startOver() {
     started = false;
 
     //----- Gamedata -----
-    var gameOverMessage =   "Name: " + gameData.userName +
-                            "\nTime: " + gameData.finalTime +
-                            "\nScore: " + gameData.finalScore +
-                            "\nTotal Score: " + gameData.totalScore;
-    alert("Game Over!\n\n" + gameOverMessage);
+    // var gameOverMessage =   "Name: " + gameData.userName +
+    //                         "\nTime: " + gameData.finalTime +
+    //                         "\nScore: " + gameData.finalScore +
+    //                         "\nTotal Score: " + gameData.totalScore;
+    // alert("Game Over!\n\n" + gameOverMessage);
 }
 
 //---------- Timer ----------

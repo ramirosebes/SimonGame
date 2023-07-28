@@ -1,4 +1,5 @@
 /*-------------------- Header --------------------*/
+
 header {
     display: flex;
     align-items: center;
@@ -6,6 +7,8 @@ header {
     padding: 2rem;
     background-color: #202020;
 }
+
+/*---------- Nav ----------*/
 
 .logo {
     font-family: 'Press Start 2P', cursive;
@@ -72,12 +75,14 @@ header {
     color: #ecececec;
 }
 
-/*-------------------- Main --------------------*/
+/*-------------------- Body --------------------*/
 body {
     background-color: #272727;
     color: white;
     font-family: 'Press Start 2P', cursive;
 }
+
+/*---------- Forms ----------*/
 
 main {
     display: flex;
@@ -144,9 +149,7 @@ form div {
     outline: none;
 }
 
-/*-------------------- Prueba --------------------*/
-
-/*---------- Validaciones Inputs ----------*/
+/*---------- Validations Inputs ----------*/
 .form__input-error {
     font-size: 12px;
     margin-top: 10px;
@@ -186,7 +189,7 @@ form div {
     border: 3px solid #bb2929;
 }
 
-/*---------- Message----------*/
+/*----- Message -----*/
 .form__message p {
     margin: 0;
 }
@@ -196,7 +199,7 @@ form div {
     background: #F66060;
     padding: 0 15px;
     border-radius: 3px;
-    margin-top: 10px;
+    margin-top: 20px;
     display: none;
 }
 
@@ -236,4 +239,36 @@ form div {
     text-decoration: none;
     color: black;
     font-size: 12px;
+}
+
+/*-------------------- Media Queries --------------------*/
+
+@media only screen and (max-width: 375px) {
+    .contactUs {
+        font-size: 35px;
+    }
+
+    input {
+        width: 300px;
+    }
+
+    textarea {
+        width: 300px;
+    }
+
+    .form__message {
+        width: 300px;
+        height: 90px;
+        font-size: 12px;
+    }
+
+    .form__input-error {
+        max-width: 300px;
+        padding-left: 12px;
+        text-align: center;
+    }
+
+    .form__message-successful {
+        text-align: center;
+    }
 }

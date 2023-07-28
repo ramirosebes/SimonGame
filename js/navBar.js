@@ -1,3 +1,4 @@
+//-------------------- Variables --------------------
 var nav = document.querySelector("#nav");
 var abrir = document.querySelector("#open");
 var cerrar = document.querySelector("#close");

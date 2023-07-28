@@ -56,6 +56,9 @@ buttonSend.addEventListener('click', function(e) {
     if (fields.name && fields.email && fields.textarea ) {
         form.reset();
 
+        fields.name = false;
+        fields.email = false;
+        fields.textarea = false
         document.getElementById('form_message-successful').classList.add('form__message-successful-active');
         setTimeout(() => {
 			document.getElementById('form_message-successful').classList.remove('form__message-successful-active');

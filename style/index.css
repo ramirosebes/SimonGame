@@ -1,4 +1,5 @@
 /*-------------------- Header --------------------*/
+
 header {
     display: flex;
     align-items: center;
@@ -6,6 +7,8 @@ header {
     padding: 2rem;
     background-color: #202020;
 }
+
+/*---------- Nav ----------*/
 
 .logo {
     font-family: 'Press Start 2P', cursive;
@@ -72,11 +75,13 @@ header {
     color: #ecececec;
 }
 
-/*-------------------- Main --------------------*/
+/*-------------------- Body --------------------*/
 body {
     text-align: center;
     background-color: #272727;
 }
+
+/*---------- Simon ----------*/
 
 #level-title {
     font-family: 'Press Start 2P', cursive;
@@ -146,7 +151,7 @@ body {
     font-size: 30px;
 }
 
-/*------------------ Form -------------------*/
+/*------------------ Modal -------------------*/
 .enterName {
     display: flex;
     flex-direction: column;
@@ -230,6 +235,7 @@ body {
     cursor: pointer;
 }
 
+/*---------- Ranking ---------*/
 
 .hide {
     display: none;
