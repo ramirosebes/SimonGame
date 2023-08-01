@@ -22,26 +22,12 @@ document.getElementById("startBtn").addEventListener("click", function() {
         var sectionForm = document.getElementById('enterName');
         sectionForm.classList.remove('hide');
     }
-
-    //----- Codiog antiguo-----
-    // if (!started) {
-    //     document.getElementById("level-title").textContent = "Level " + level;
-    //     started = true;
-    //     setTimeout(function() {
-    //         nextSequence();
-    //     }, 750); //Tiempo a que se encienda el boton
-    //     //----- Timer -----
-    //     restartTime();
-    //     startTime();
-    //     //----- Score -----
-    //     userScore = 0;
-    //     document.getElementById('score').innerHTML = "Score: " + userScore;
-    // }
 });
 
 // Resert button
 document.getElementById("resetBtn").addEventListener("click", function() {
     if (started) {
+        //----- Simon -----
         document.getElementById("level-title").textContent = "Press Start button to start.";
         userClickedPattern = [];
         gamePattern = [];
@@ -56,7 +42,7 @@ document.getElementById("resetBtn").addEventListener("click", function() {
     }
 });
 
-// Eventos para los botones de colores
+// Eventes colors buttons
 var buttons = document.querySelectorAll(".btnSimon");
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", function() {
@@ -112,16 +98,15 @@ function checkAnswer(currentLevel) {
         totalScore = Math.round(userScore / timeElapsedInSeconds);
 
         // Actualizar el objeto gameData con la información relevante
-        // gameData.userName = document.getElementById('inputName').value;
         gameData.finalTime = document.getElementById('time').textContent;
         gameData.finalScore = userScore;
         gameData.totalScore = totalScore;
-
-        // var inputEnterName = document.getElementById('inputName');
-        // gameData.userName = inputEnterName.
         //--------------------
 
         //Hacer una funcion que guarde en localStorage todos los datos y se llame aca abajo una vez que el jugador se equivoca
+        //----- Local Storage -----
+        const gameDataJSON = JSON.stringify(gameData); //Lo convierte el Objecto a JSON
+        localStorage.setItem("gameData", gameDataJSON);
         startOver();
     }
 }

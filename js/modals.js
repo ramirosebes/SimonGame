@@ -3,7 +3,7 @@ var form = document.getElementById('formClass');
 var inputs = document.querySelectorAll('#formClass input');
 
 var expressions = {
-    name: /^[a-zA-Z0-9]{1,}$/,
+    name: /^(.*[a-zA-Z]){3,}/,
 }
 
 var fields = {
@@ -41,11 +41,11 @@ var buttonSend = document.getElementById('buttonSend');
 
 buttonSend.addEventListener('click', function(e) {
     if (fields.name) {
+        gameData.userName = document.getElementById('inputName').value;
         form.reset();
         e.preventDefault();
         document.getElementById('group__name').classList.remove('form__group-correct');
         
-        gameData.userName = document.getElementById('inputName').value;
         fields.name = false; //Validacion para que al apretar restart y luego ingresar de nuevo el formulario no te deje mandarlo de una
 
         //----- Codigo simon.js -----
@@ -63,7 +63,6 @@ buttonSend.addEventListener('click', function(e) {
             userScore = 0;
             document.getElementById('score').innerHTML = "Score: " + userScore;
         }
-        //------------------------------------------------------------------------
         
     } else {
         e.preventDefault(); //evita que haga la funcion degault de submit

@@ -81,6 +81,13 @@ body {
     background-color: #272727;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /*---------- Simon ----------*/
 
 #level-title {
@@ -91,9 +98,22 @@ body {
 }
 
 .container {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 50%;
     margin: auto;
+}
+
+.row {
+    display: flex;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn {
@@ -176,7 +196,7 @@ body {
     font-size: 30px;
 }
 
-.form__input{
+.form__input {
     margin-block: 20px;
     width: 500px;
     height: 50px;
@@ -237,6 +257,112 @@ body {
 
 /*---------- Ranking ---------*/
 
+/*---------- Hide ----------*/
 .hide {
     display: none;
+}
+
+/*-------------------- Media Qeuries --------------------*/
+
+@media only screen and (max-width: 768px) {
+    #level-title {
+        font-size: 30px;
+        margin-block: 1.5rem;
+    }
+
+    .time, .score {
+        font-size: 20px;
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    /*---------- Navbar ---------*/
+    header {
+        padding: 1rem;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    /*---------- Simon ---------*/
+    #level-title {
+        font-size: 30px;
+        margin-block: 2rem;
+    }
+
+    .time, .score {
+        font-size: 20px;
+        margin-block: 1rem;
+    }
+
+    .btnSimon {
+        margin: 10px;
+        height: 190px;
+        width: 190px;
+    }
+
+    /*---------- Modal ---------*/
+    .form__label {
+        font-size: 20px;
+    }
+
+    .form__input {
+        width: 330px;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    /*---------- Simon ---------*/
+    .time, .score {
+        font-size: 20px;
+        margin-block: 1rem;
+    }
+
+    .btnSimon {
+        margin: 10px;
+        height: 160px;
+        width: 160px;
+    }
+
+    /*---------- Modal ---------*/
+    .form__label {
+        font-size: 20px;
+    }
+
+    .form__input {
+        width: 300px;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    /*---------- Simon ---------*/
+    .time, .score {
+        font-size: 20px;
+        margin-block: 1rem;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .controls {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .btnSimon {
+        margin: 10px;
+        height: 140px;
+        width: 140px;
+    }
+
+    /*---------- Modal ---------*/
+    .form__label {
+        font-size: 20px;
+    }
+
+    .form__input {
+        width: 300px;
+    }
 }

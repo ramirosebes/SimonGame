@@ -243,6 +243,35 @@ form div {
 
 /*-------------------- Media Queries --------------------*/
 
+@media only screen and (max-width: 425px) {
+    .contactUs {
+        font-size: 35px;
+    }
+
+    input {
+        width: 370px;
+    }
+
+    textarea {
+        width: 370px;
+    }
+
+    .form__message {
+        width: 300px;
+        height: 90px;
+        font-size: 12px;
+        text-align: center;
+    }
+
+    .form__input-error {
+        text-align: center;
+    }
+
+    .form__message-successful {
+        text-align: center;
+    }
+}
+
 @media only screen and (max-width: 375px) {
     .contactUs {
         font-size: 35px;
@@ -260,12 +289,11 @@ form div {
         width: 300px;
         height: 90px;
         font-size: 12px;
+        text-align: center;
     }
 
     .form__input-error {
-        max-width: 300px;
-        padding-left: 12px;
-        text-align: center;
+        text-align: center; 
     }
 
     .form__message-successful {
