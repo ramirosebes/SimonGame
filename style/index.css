@@ -187,7 +187,6 @@ main {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     z-index: 999;
 
     font-family: 'Press Start 2P', cursive;
@@ -342,6 +341,18 @@ tbody tr:nth-child(even) {
 
 tbody tr:nth-child(odd) {
     background-color: #252525;
+}
+
+.ranking-btn {
+    font-family: 'Press Start 2P', cursive;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #444;
+    margin-top: 15px;
+    margin-inline: 10px;
+    cursor: pointer;
 }
 
 /*---------- Hide ----------*/

@@ -70,19 +70,3 @@ buttonSend.addEventListener('click', function(e) {
         document.querySelector(`#group__name .form__input-error`).classList.add('form__input-error-active');
     }
 });
-
-//-------------------- Ranking --------------------
-//-------- Agregar al final de js/modals.js --------
-// Cargar datos desde el Local Storage y agregarlos a la tabla del ranking
-
-
-// Evento para cerrar el modal de ranking
-var closeRanking = document.getElementById('closeRankingModal');
-closeRanking.addEventListener("click", function() {
-    var sectionRanking = document.getElementById('ranking');
-    sectionRanking.classList.add("hide");
-    clearRankingTable();
-});
-
-// Cargar datos en la tabla del ranking al cargar la página
-// loadRankingData();
