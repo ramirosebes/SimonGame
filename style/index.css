@@ -28,6 +28,12 @@ header {
     font-family: 'Press Start 2P', cursive;
 }
 
+.li-ranking {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    cursor: pointer;
+}
+
 .open-menu,
 .close-menu {
     display: block;
@@ -256,6 +262,87 @@ main {
 }
 
 /*---------- Ranking ---------*/
+.ranking-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+}
+
+.ranking-modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #202020;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    max-width: 90%;
+    max-height: 90%;
+    overflow-y: auto;
+}
+
+.close {
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    padding-inline: 5px;
+}
+
+.close:hover {
+    color: #bbb;
+    /*Agregar algo mas*/
+    border-radius: 5px;
+    /* background-color: #444; */
+}
+
+.h2-ranking {
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Press Start 2P', cursive;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 5px solid #ddd;
+}
+
+tr:last-child {
+    border-bottom: none;
+}
+
+tr:hover {
+    background-color: #444;
+}
+
+th {
+    background-color: #444;
+    color: white;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #303030;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #252525;
+}
 
 /*---------- Hide ----------*/
 .hide {

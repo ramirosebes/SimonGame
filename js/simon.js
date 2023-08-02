@@ -7,14 +7,7 @@ var level = 0;
 var userScore = 0;
 var totalScore = 0;
 var userName = " ";
-
-//-------------------- Objetos --------------------
-var gameData = {
-    userName: " ",
-    finalTime: "",
-    finalScore: 0,
-    totalScore: 0,
-};
+var form = document.getElementById('formClass');
 
 // Start button
 document.getElementById("startBtn").addEventListener("click", function() {
@@ -26,7 +19,7 @@ document.getElementById("startBtn").addEventListener("click", function() {
 
 // Resert button
 document.getElementById("resetBtn").addEventListener("click", function() {
-    if (started) {
+    if (started) {a
         //----- Simon -----
         document.getElementById("level-title").textContent = "Press Start button to start.";
         userClickedPattern = [];
@@ -91,23 +84,8 @@ function checkAnswer(currentLevel) {
         //----- Timer -----
         stopTime();
         //-----------------
-
-        //----- Gamedata -----
-        //Cambiar logida del totalScore
-        var timeElapsedInSeconds = accumulated / 1000;
-        totalScore = Math.round(userScore / timeElapsedInSeconds);
-
-        // Actualizar el objeto gameData con la información relevante
-        gameData.finalTime = document.getElementById('time').textContent;
-        gameData.finalScore = userScore;
-        gameData.totalScore = totalScore;
-        //--------------------
-
-        //Hacer una funcion que guarde en localStorage todos los datos y se llame aca abajo una vez que el jugador se equivoca
-        //----- Local Storage -----
-        const gameDataJSON = JSON.stringify(gameData); //Lo convierte el Objecto a JSON
-        localStorage.setItem("gameData", gameDataJSON);
         startOver();
+        
     }
 }
 
@@ -144,16 +122,22 @@ function playSound(name) {
 }
 
 function startOver() {
+    // Crear un objeto con la información del juego actual
+    var gameData = {
+        userName: document.getElementById('inputName').value,
+        finalTime: document.getElementById('time').textContent,
+        finalScore: userScore,
+        finalLevel: level,
+        date: Date.now()
+    };
+
+    // Guardar el objeto en Local Storage
+    saveGameData(gameData);
+    //-----Reset EnterName -----
     level = 0;
     gamePattern = [];
     started = false;
-
-    //----- Gamedata -----
-    // var gameOverMessage =   "Name: " + gameData.userName +
-    //                         "\nTime: " + gameData.finalTime +
-    //                         "\nScore: " + gameData.finalScore +
-    //                         "\nTotal Score: " + gameData.totalScore;
-    // alert("Game Over!\n\n" + gameOverMessage);
+    form.reset();
 }
 
 //---------- Timer ----------
@@ -194,4 +178,73 @@ function formatMS(time_ms) {
     }
 
     return H.ceros(2) + ":" + M.ceros(2) + ":" + S.ceros(2) + "." + MS.ceros(3);
+}
+
+//---------- Ranking ----------
+function saveGameData(gameData) {
+    // Obtener todos los datos almacenados previamente (si hay alguno)
+    var allGameData = JSON.parse(localStorage.getItem("allGameData")) || [];
+
+    //------------------- NO PERMITIR DUPLICADOS ------------------
+    // Buscar si ya existe un registro con el mismo nombre de jugador
+    var existingGameData = allGameData.find(function(data) {
+        return data.userName === gameData.userName;
+    });
+
+    // Si existe un registro y el nuevo puntaje es mayor, actualizar el registro
+    if (existingGameData) {
+        if (gameData.finalScore > existingGameData.finalScore) {
+            existingGameData.finalTime = gameData.finalTime;
+            existingGameData.finalScore = gameData.finalScore;
+            existingGameData.finalLevel = gameData.finalLevel;
+            existingGameData.date = gameData.date;
+        }
+    } else {
+        // Si no existe un registro con el mismo nombre, agregar el nuevo registro al array
+        allGameData.push(gameData);
+    }
+
+    // Convertir el array de datos en formato JSON y guardarla en Local Storage
+    localStorage.setItem("allGameData", JSON.stringify(allGameData));
+
+    //------------------ PERMITIR DUPLICADOS ------------------
+    // function saveGameData(gameData) {
+
+    //     var allGameData = JSON.parse(localStorage.getItem("allGameData")) || [];
+    
+    //     allGameData.push(gameData);
+
+    //     localStorage.setItem("allGameData", JSON.stringify(allGameData));
+    // }
+    
+}
+
+function loadRankingData() {
+    var rankingTable = document.getElementById("rankingTable");
+    var allGameData = JSON.parse(localStorage.getItem("allGameData")) || [];
+
+    for (var i = 0; i < allGameData.length; i++) {
+        var data = allGameData[i];
+        var row = rankingTable.insertRow(-1);
+
+        var playerNameCell = row.insertCell(0);
+        var scoreCell = row.insertCell(1);
+        var levelCell = row.insertCell(2);
+        var dateTimeCell = row.insertCell(3);
+
+        playerNameCell.innerHTML = data.userName;
+        scoreCell.innerHTML = data.finalScore;
+        levelCell.innerHTML = data.finalLevel;
+        dateTimeCell.innerHTML = new Date(data.date).toLocaleString();
+    }
+}
+
+function clearRankingTable() {
+    var rankingTable = document.getElementById("rankingTable");
+    var rows = rankingTable.getElementsByTagName("tr");
+
+    // Comenzamos desde i = 1 para omitir la primera fila (los encabezados th)
+    for (var i = rows.length - 1; i > 0; i--) {
+        rankingTable.removeChild(rows[i]);
+    }
 }

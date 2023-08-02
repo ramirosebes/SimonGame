@@ -1,3 +1,4 @@
+//-------------------- Modal Enter Name --------------------
 var sectionForm = document.getElementById('enterName');
 var form = document.getElementById('formClass');
 var inputs = document.querySelectorAll('#formClass input');
@@ -41,8 +42,6 @@ var buttonSend = document.getElementById('buttonSend');
 
 buttonSend.addEventListener('click', function(e) {
     if (fields.name) {
-        gameData.userName = document.getElementById('inputName').value;
-        form.reset();
         e.preventDefault();
         document.getElementById('group__name').classList.remove('form__group-correct');
         
@@ -71,3 +70,19 @@ buttonSend.addEventListener('click', function(e) {
         document.querySelector(`#group__name .form__input-error`).classList.add('form__input-error-active');
     }
 });
+
+//-------------------- Ranking --------------------
+//-------- Agregar al final de js/modals.js --------
+// Cargar datos desde el Local Storage y agregarlos a la tabla del ranking
+
+
+// Evento para cerrar el modal de ranking
+var closeRanking = document.getElementById('closeRankingModal');
+closeRanking.addEventListener("click", function() {
+    var sectionRanking = document.getElementById('ranking');
+    sectionRanking.classList.add("hide");
+    clearRankingTable();
+});
+
+// Cargar datos en la tabla del ranking al cargar la página
+// loadRankingData();

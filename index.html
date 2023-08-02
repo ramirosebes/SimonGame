@@ -15,7 +15,7 @@
         <nav class="nav" id="nav">
             <button class="close-menu" id="close"><img src="./img/cross.svg" alt="cross"></button>
             <ul class="nav-list">
-                <li><a href="#">Ranking</a></li>
+                <li id="li-ranking" class="li-ranking">Ranking</li>
                 <li><a href="./contactUs.html" target="_blank">Contact Us</a></li>
                 <li><a href="https://github.com/ramirosebes/SimonGame" target="_blank">Repository</a></li>
             </ul>
@@ -38,8 +38,26 @@
             </form>
         </section>
 
-        <section class="ranking">
-            
+        <section class="ranking hide" id="ranking">
+            <div class="ranking-modal" id="rankingModal">
+                <div class="ranking-modal-content">
+                    <span class="close" id="closeRankingModal">&times;</span>
+                    <h2 class="h2-ranking">Game Ranking</h2>
+                    <table id="rankingTable">
+                        <thead>
+                            <tr>
+                                <th>Player</th>
+                                <th>Score</th>
+                                <th>Level</th>
+                                <th>Date & Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows for ranking data will be added dynamically using JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </section>
 
         <section class="simonGame">
