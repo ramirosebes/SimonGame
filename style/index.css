@@ -284,6 +284,11 @@ main {
     max-width: 90%;
     max-height: 90%;
     overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .close {
@@ -408,6 +413,14 @@ tbody tr:nth-child(odd) {
     .form__input {
         width: 330px;
     }
+
+    /*---------- Ranking ---------*/
+    /* .ranking-modal-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    } */
 }
 
 @media only screen and (max-width: 375px) {
