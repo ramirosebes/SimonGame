@@ -19,7 +19,7 @@ document.getElementById("startBtn").addEventListener("click", function() {
 
 // Resert button
 document.getElementById("resetBtn").addEventListener("click", function() {
-    if (started) {a
+    if (started) {
         //----- Simon -----
         document.getElementById("level-title").textContent = "Press Start button to start.";
         userClickedPattern = [];
