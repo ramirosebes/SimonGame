@@ -1,5 +1,4 @@
 /*-------------------- Header --------------------*/
-
 header {
     display: flex;
     align-items: center;
@@ -240,6 +239,8 @@ form div {
     color: black;
     font-size: 12px;
 }
+
+
 
 /*-------------------- Media Queries --------------------*/
 

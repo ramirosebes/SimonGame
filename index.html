@@ -4,14 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Simon</title>
-        <link rel="stylesheet" href="./style/reset.css">
-        <link rel="stylesheet" href="./style/index.css">
+        <link rel="stylesheet" href="./style/reset.css" type="text/css">
+        <link rel="stylesheet" href="./style/index.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     </head>
 <body>
     <header class="headerClass">
         <h1 class="logo">Simon Game</h1>
-        <button id="open" class="open-menu"><img src="./img/menu.svg" alt="menu-hamburger"></i></button>
+        <button id="open" class="open-menu"><img src="./img/menu.svg" alt="menu-hamburger"></button>
         <nav class="nav" id="nav">
             <button class="close-menu" id="close"><img src="./img/cross.svg" alt="cross"></button>
             <ul class="nav-list">
@@ -23,16 +23,16 @@
     </header>
     <main>
 
-        <section class="enterName hide" id="enterName">
-            <form action="" class="formClass" id="formClass">
+        <section class="enterNameClass hide" id="enterName">
+            <form class="formClassClass" id="formClass">
                 <div class="form__group" id="group__name">
-                    <label for="name" class="form__label">Plase, enter your name.</label>
+                    <label for="inputName" class="form__label">Plase, enter your name.</label>
                     <div class="form__group-input">
                         <input type="text" name="name" id="inputName" placeholder="Name" class="form__input">
                     </div>
                     <p class="form__input-error">You must complete de field.</p>
                     <div class="form__group-btn-send">
-                        <button id="buttonSend" class="form__btn"">Start</button>
+                        <button id="buttonSend" class="form__btn">Start</button>
                     </div>
                 </div>
             </form>
@@ -54,7 +54,7 @@
                         </thead>
                         <tbody>
                             <!-- Rows for ranking data will be added dynamically using JavaScript -->
-                        </tbody>1
+                        </tbody>
                     </table>
                     <div class="ranking-buttons">
                         <button id="sortByScoreBtn" class="ranking-btn">Sort by Score</button>
@@ -65,10 +65,11 @@
         </section>
 
         <section class="simonGame">
-            <h2 id="level-title">Press Start button to start.</h2>
-            <div class="time" id="time">
-                00:00:00.000
-            </div>
+            <div>
+                <h2 id="level-title">Press Start button to start.</h2>
+                    <div class="time" id="time">
+                        00:00:00.000
+                    </div>
             </div>
             <div class="container">
                 <div class="row">
@@ -94,7 +95,7 @@
     </main>
     <script src="./js/ranking.js"></script>
     <script src="./js/modals.js"></script>
-    <script src="./js/navBar.js" charset="utf-8"></script>
+    <script src="./js/navBar.js"></script>
     <script src="./js/simon.js"></script>
 </body>
 </html>
