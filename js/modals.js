@@ -61,6 +61,7 @@ buttonSend.addEventListener('click', function(e) {
             //----- Score -----
             userScore = 0;
             document.getElementById('score').innerHTML = "Score: " + userScore;
+            // subtractScoreEveryTenSeconds();
         }
         
     } else {

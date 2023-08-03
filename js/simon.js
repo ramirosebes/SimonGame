@@ -29,9 +29,11 @@ document.getElementById("resetBtn").addEventListener("click", function() {
         //----- Timer -----
         stopTime();
         restartTime();
+        form.reset(); //Testear que no rompa nada
         //----- Score -----
         userScore = 0;
         document.getElementById('score').innerHTML = "Score: " + userScore;
+        stopSubtractingScore();
     }
 });
 
@@ -138,6 +140,7 @@ function startOver() {
     gamePattern = [];
     started = false;
     form.reset();
+    stopSubtractingScore();
 }
 
 //---------- Timer ----------
@@ -147,6 +150,7 @@ var accumulated = 0;
 
 function startTime() {
     timeCount = true;
+    startSubtractingScore();
 }
 
 function stopTime() {
@@ -178,4 +182,33 @@ function formatMS(time_ms) {
     }
 
     return H.ceros(2) + ":" + M.ceros(2) + ":" + S.ceros(2) + "." + MS.ceros(3);
+}
+
+//---------------------------------------------------------------------
+//-------- Nueva función para la penalización --------
+function showPenalty() {
+    var penaltyElement = document.querySelector('.penalty');
+    penaltyElement.classList.remove('hide');
+    setTimeout(function() {
+        penaltyElement.classList.add('hide');
+    }, 1000);
+}
+
+//-------- Nueva función para descontar el score cada 10 segundos --------
+var intervalId; // Variable para almacenar el ID del intervalo
+
+function startSubtractingScore() {
+  // Detener el intervalo anterior, si existe
+    stopSubtractingScore();
+
+  // Iniciar el nuevo intervalo
+    intervalId = setInterval(function() {
+    userScore -= 50;
+    document.getElementById('score').innerHTML = "Score: " + userScore;
+    showPenalty(); // Mostramos la penalización cada vez que se descuenten los puntos
+    }, 10000);
+}
+
+function stopSubtractingScore() {
+    clearInterval(intervalId);
 }

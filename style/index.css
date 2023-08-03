@@ -143,6 +143,20 @@ main {
     width: 200px;
     border: 10px solid black;
     border-radius: 20%;
+    cursor: pointer;
+}
+
+.score-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-div p {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 30px;
+    color: red;
+    padding-left: 10px;
 }
 
 .red {
@@ -175,6 +189,10 @@ main {
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 30px;
+}
+
+.penalty {
+    color: red;
 }
 
 /*------------------ Modal -------------------*/
