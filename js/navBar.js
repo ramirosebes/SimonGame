@@ -1,5 +1,5 @@
 //-------------------- Variables --------------------
-var nav = document.querySelector("#nav");
+var nav = document.querySelector("#navID");
 var abrir = document.querySelector("#open");
 var cerrar = document.querySelector("#close");
 

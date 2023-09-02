@@ -1,5 +1,5 @@
-var form = document.getElementById('formClass');
-var inputs = document.querySelectorAll('#formClass input');
+var form = document.getElementById('formID');
+var inputs = document.querySelectorAll('#formID input');
 var textarea = document.querySelector('#inputTextarea')
 
 var expressions = {
@@ -17,27 +17,27 @@ var fields = {
 function validateForm(e) {
 	switch (e.target.name) {
         case "name":
-            validateField(expressions.name, e.target, 'name');
+            validateField(expressions.name, e.target, 'name', 'Name');
             break;
         case "email":
-            validateField(expressions.email, e.target, 'email');
+            validateField(expressions.email, e.target, 'email', 'Email');
             break;
         case "textarea":
-            validateField(expressions.textarea, e.target, 'textarea');
+            validateField(expressions.textarea, e.target, 'textarea', 'Textarea');
             break;
     }
 }
 
-function validateField(expression, input, field) {
+function validateField(expression, input, field, fieldName) {
     if(expression.test(input.value)) {
-        document.getElementById(`group__${field}`).classList.remove('form__group-incorrect');
-        document.getElementById(`group__${field}`).classList.add('form__group-correct');
-        document.querySelector(`#group__${field} .form__input-error`).classList.remove('form__input-error-active');
+        document.getElementById(`group${fieldName}`).classList.remove('formGroupIncorrect');
+        document.getElementById(`group${fieldName}`).classList.add('formGroupCorrect');
+        document.querySelector(`#group${fieldName} .formInputError`).classList.remove('formInputErrorActive');
         fields[field] = true;
     } else {
-        document.getElementById(`group__${field}`).classList.add('form__group-incorrect');
-        document.getElementById(`group__${field}`).classList.remove('form__group-correct');
-        document.querySelector(`#group__${field} .form__input-error`).classList.add('form__input-error-active');
+        document.getElementById(`group${fieldName}`).classList.add('formGroupIncorrect');
+        document.getElementById(`group${fieldName}`).classList.remove('formGroupCorrect');
+        document.querySelector(`#group${fieldName} .formInputError`).classList.add('formInputErrorActive');
         fields[field] = false;
     }
 }
@@ -59,17 +59,17 @@ buttonSend.addEventListener('click', function(e) {
         fields.name = false;
         fields.email = false;
         fields.textarea = false
-        document.getElementById('form_message-successful').classList.add('form__message-successful-active');
+        document.getElementById('formMessageSuccessfulID').classList.add('formMessageSuccessfulActive');
         setTimeout(() => {
-			document.getElementById('form_message-successful').classList.remove('form__message-successful-active');
-            document.getElementById('group__name').classList.remove('form__group-correct');
-            document.getElementById('group__email').classList.remove('form__group-correct');
-            document.getElementById('group__textarea').classList.remove('form__group-correct');
+			document.getElementById('formMessageSuccessfulID').classList.remove('formMessageSuccessfulActive');
+            document.getElementById('groupName').classList.remove('formGroupCorrect');
+            document.getElementById('groupEmail').classList.remove('formGroupCorrect');
+            document.getElementById('groupTextarea').classList.remove('formGroupCorrect');
 		}, 3000);
 
-        document.getElementById('form__message').classList.remove('form__message-active');
+        document.getElementById('formMessageID').classList.remove('formMessageActive');
     } else {
         e.preventDefault(); //evita que haga la funcion degault de submit
-        document.getElementById('form__message').classList.add('form__message-active');
+        document.getElementById('formMessageID').classList.add('formMessageActive');
     }
 });

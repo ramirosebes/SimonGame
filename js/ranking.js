@@ -1,8 +1,8 @@
 //------------------  Ranking ---------------- --
 //--------- Eventos --------- 
-var rankingBtn = document.getElementById('li-ranking');
+var rankingBtn = document.getElementById('liRankingID');
 rankingBtn.addEventListener("click", function() {
-    var sectionRanking = document.getElementById('ranking');
+    var sectionRanking = document.getElementById('rankingID');
     sectionRanking.classList.remove("hide");
     clearRankingTable();
     loadRankingData();
@@ -11,7 +11,7 @@ rankingBtn.addEventListener("click", function() {
 // Evento para cerrar el modal de ranking
 var closeRanking = document.getElementById('closeRankingModal');
 closeRanking.addEventListener("click", function() {
-    var sectionRanking = document.getElementById('ranking');
+    var sectionRanking = document.getElementById('rankingID');
     sectionRanking.classList.add("hide");
     clearRankingTable();
 });

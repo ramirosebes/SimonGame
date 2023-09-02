@@ -15,20 +15,20 @@ header {
     font-size: 2rem;
 }
 
-.nav-list {
+.navList {
     list-style-type: none;
     display: flex;
     gap: 2rem;
 }
 
-.nav-list li a {
+.navList li a {
     text-decoration: none;
     color: white;
     font-family: 'Press Start 2P', cursive;
 }
 
-.open-menu,
-.close-menu {
+.openMenu,
+.closeMenu {
     display: block;
     border: 0;
     font-size: 1.25rem;
@@ -36,15 +36,15 @@ header {
     cursor: pointer;
 }
 
-.open-menu {
+.openMenu {
     color: white;
 }
 
-.close-menu {
+.closeMenu {
     color: white;
 }
 
-.nav {
+.navClass {
     opacity: 0;
     visibility: hidden;
     display: flex;
@@ -60,17 +60,17 @@ header {
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
 }
 
-.nav.visible {
+.navClass.visible {
     opacity: 1;
     visibility: visible;
 }
 
-.nav-list {
+.navList {
     flex-direction: column;
     align-items: end;
 }
 
-.nav-list li a {
+.navList li a {
     color: #ecececec;
 }
 
@@ -142,57 +142,58 @@ form div {
     cursor: pointer;
 }
 
-.form__input:focus {
+.formInput:focus {
     border: 3px solid grey;
 	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
     outline: none;
 }
 
 /*---------- Validations Inputs ----------*/
-.form__input-error {
+.formInputError {
     font-size: 12px;
     margin-top: 10px;
     display: none;
     max-width: 400px;
+    text-align: center;
 }
 
-.form__input-error-active {
+.formInputErrorActive {
     display: block;
     font-size: 12px;
     margin-top: 10px;
 }
 
-.form_group-corect .form__label {
+.formGroupCorrect .formLabel {
     color: #1ed12d;
 }
 
-.form__group-correct{
+.formGroupCorrect{
     color: #1ed12d;
 	opacity: 1;
 }
 
-.form__group-correct .form__input {
+.formGroupCorrect .formInput {
     border: 3px solid #1ed12d;
 }
 
-.form__group-incorrect .form__label {
+.formGroupIncorrect .formLabel {
     color: #bb2929;
 }
 
-.form__group-incorrect {
+.formGroupIncorrect {
     color: #bb2929;
 	opacity: 1;
 }
 
-.form__group-incorrect .form__input {
+.formGroupIncorrect .formInput {
     border: 3px solid #bb2929;
 }
 
 /*----- Message -----*/
-.form__message p {
+.formMessageClass p {
     margin: 0;
 }
-.form__message {
+.formMessageClass {
     height: 45px;
     line-height: 45px;
     background: #F66060;
@@ -202,22 +203,22 @@ form div {
     display: none;
 }
 
-.form__message-active {
+.formMessageActive {
     display: block;
 }
 
-.form__message-successful {
+.formMessageSuccessfulClass {
     margin-top: 20px;
     font-size: 20px;
 	color: #119200;
 	display: none;
 }
 
-.form__message-successful-active {
+.formMessageSuccessfulActive {
     display: block;
 }
 
-.form__group-btn-send {
+.formGroupBtnSend {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -257,18 +258,18 @@ form div {
         width: 370px;
     }
 
-    .form__message {
+    .formMessageClass {
         width: 300px;
         height: 90px;
         font-size: 12px;
         text-align: center;
     }
 
-    .form__input-error {
+    .formInputError {
         text-align: center;
     }
 
-    .form__message-successful {
+    .formMessageSuccessfulClass {
         text-align: center;
     }
 }
@@ -286,18 +287,18 @@ form div {
         width: 300px;
     }
 
-    .form__message {
+    .formMessageClass {
         width: 300px;
         height: 90px;
         font-size: 12px;
         text-align: center;
     }
 
-    .form__input-error {
+    .formInputError {
         text-align: center; 
     }
 
-    .form__message-successful {
+    .formMessageSuccessfulClass {
         text-align: center;
     }
 }

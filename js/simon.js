@@ -7,7 +7,7 @@ var level = 0;
 var userScore = 0;
 var totalScore = 0;
 var userName = " ";
-var form = document.getElementById('formClass');
+var form = document.getElementById('formID');
 
 // Start button
 document.getElementById("startBtn").addEventListener("click", function() {
@@ -21,7 +21,7 @@ document.getElementById("startBtn").addEventListener("click", function() {
 document.getElementById("resetBtn").addEventListener("click", function() {
     if (started) {
         //----- Simon -----
-        document.getElementById("level-title").textContent = "Press Start button to start.";
+        document.getElementById("levelTitle").textContent = "Press Start button to start.";
         userClickedPattern = [];
         gamePattern = [];
         level = 0;
@@ -53,7 +53,7 @@ for (var i = 0; i < buttons.length; i++) {
             //----- Score ----- 
             //Me permite que no se agregue 100+ cuando se equivoca
             var bodyElement = document.body;
-            if (!bodyElement.classList.contains("game-over")) {
+            if (!bodyElement.classList.contains("gameOver")) {
                 userScore += 100;
                 document.getElementById('score').innerHTML = "Score: " + userScore;
             }
@@ -76,12 +76,12 @@ function checkAnswer(currentLevel) {
 
         playSound("wrong");
 
-        document.body.classList.add("game-over");
+        document.body.classList.add("gameOver");
         setTimeout(function() {
-            document.body.classList.remove("game-over");
+            document.body.classList.remove("gameOver");
         }, 750);
 
-        document.getElementById("level-title").textContent = "Game over, Press start button to Restart.";
+        document.getElementById("levelTitle").textContent = "Game over, Press start button to Restart.";
 
         //----- Timer -----
         stopTime();
@@ -94,7 +94,7 @@ function checkAnswer(currentLevel) {
 function nextSequence() {
     userClickedPattern = [];
     level++;
-    document.getElementById("level-title").textContent = "Level " + level;
+    document.getElementById("levelTitle").textContent = "Level " + level;
 
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColor = buttonColors[randomNumber];
@@ -127,7 +127,7 @@ function startOver() {
     // Crear un objeto con la información del juego actual
     var gameData = {
         userName: document.getElementById('inputName').value,
-        finalTime: document.getElementById('time').textContent,
+        finalTime: document.getElementById('timeID').textContent,
         finalScore: userScore,
         finalLevel: level,
         date: Date.now()
@@ -162,7 +162,7 @@ function restartTime() {
 }
 
 setInterval(function() {
-    var time = document.getElementById("time");
+    var time = document.getElementById("timeID");
     if (timeCount) {
         accumulated += Date.now() - timeRef;
     }
@@ -187,7 +187,7 @@ function formatMS(time_ms) {
 //---------------------------------------------------------------------
 //-------- Nueva función para la penalización --------
 function showPenalty() {
-    var penaltyElement = document.querySelector('.penalty');
+    var penaltyElement = document.querySelector('.penaltyClass');
     penaltyElement.classList.remove('hide');
     setTimeout(function() {
         penaltyElement.classList.add('hide');

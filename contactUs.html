@@ -11,57 +11,50 @@
 <body>
     <header>
         <h1 class="logo">Simon Game</h1>
-        <button id="open" class="open-menu"><img src="./img/menu.svg" alt="menu-hamburger"></button>
-        <nav class="nav" id="nav">
-            <button class="close-menu" id="close"><img src="./img/cross.svg" alt="cross"></button>
-            <ul class="nav-list">
+        <button id="open" class="openMenu"><img src="./img/menu.svg" alt="menu-hamburger"></button>
+        <nav class="navClass" id="navID">
+            <button class="closeMenu" id="close"><img src="./img/cross.svg" alt="cross"></button>
+            <ul class="navList">
                 <li><a href="./index.html" target="_blank">Play Simon Game</a></li>
-                <li><a href="#">Ranking</a></li>
                 <li><a href="https://github.com/ramirosebes/SimonGame" target="_blank">Repository</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <h2 class="contactUs">Contact Us</h2>
-        <form class="formClassClass" id="formClass">
+        <form class="formClass" id="formID">
 
-            <div class="form__group" id="group__name">
-                <label for="inputName" class="form__label">Name</label>
-                <div class="form__group-input">
-                    <input type="text" name="name" id="inputName" placeholder="Name" class="form__input">
+            <div class="formGroup" id="groupName">
+                <label for="inputName" class="formLabel">Name</label>
+                <div class="formGroupInput">
+                    <input type="text" name="name" id="inputName" placeholder="Name" class="formInput">
                 </div>
-                <p class="form__input-error">The field must be complete and only with alphanumeric characters.</p>
+                <p class="formInputError">The field must be complete and only with alphanumeric characters.</p>
             </div>
 
-            <div class="form__group" id="group__email">
-                <label for="inputEmail" class="form__label">Email</label>
-                <div class="form__group-input">
-                    <input type="email" name="email" id="inputEmail" placeholder="Email" class="form__input">
+            <div class="formGroup" id="groupEmail">
+                <label for="inputEmail" class="formLabel">Email</label>
+                <div class="formGroupInput">
+                    <input type="email" name="email" id="inputEmail" placeholder="Email" class="formInput">
                 </div>
-                <p class="form__input-error">The field must be complete and with a valid email format.</p>
+                <p class="formInputError">The field must be complete and with a valid email format.</p>
             </div>
 
-            <div class="form__group" id="group__textarea">
-                <label for="inputTextarea" class="form__label">Leave your message</label>
-                <div class="form__group-input">
-                    <textarea name="textarea" id="inputTextarea" placeholder="Enter your message" class="form__input"></textarea>
+            <div class="formGroup" id="groupTextarea">
+                <label for="inputTextarea" class="formLabel">Leave your message</label>
+                <div class="formGroupInput">
+                    <textarea name="textarea" id="inputTextarea" placeholder="Enter your message" class="formInput"></textarea>
                 </div>
-                <p class="form__input-error">The field must be complete and with at least 5 characters.</p>
+                <p class="formInputError">The field must be complete and with at least 5 characters.</p>
             </div>
 
-            <div class="form__message" id="form__message">
+            <div class="formMessageClass" id="formMessageID">
                 <p><b>Error:</b> Please complete the fields.</p>
             </div>
-            
-            <!-- 
-            <div class="form__group form__group-btn-send">
-                <input type="submit" value="Send" id="inputSubmit" class="form__btn">
-                <p class="form__message-successful " id="form_message-successful">Form submitted successfully</p>
-            </div> -->
 
-            <div class="form__group form__group-btn-send">
-                <button id="buttonSend" class="form__btn"><a href="mailto:ramirosebesprogram@gmail.com">Send</a></button>
-                <p class="form__message-successful" id="form_message-successful">Form submitted successfully</p>
+            <div class="formGroup formGroupBtnSend">
+                <button id="buttonSend" class="formBtn"><a href="mailto:ramirosebesprogram@gmail.com">Send</a></button>
+                <p class="formMessageSuccessfulClass" id="formMessageSuccessfulID">Form submitted successfully</p>
             </div>
 
             

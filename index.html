@@ -8,94 +8,91 @@
         <link rel="stylesheet" href="./style/index.css" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
     </head>
-<body>
-    <header class="headerClass">
-        <h1 class="logo">Simon Game</h1>
-        <button id="open" class="open-menu"><img src="./img/menu.svg" alt="menu-hamburger"></button>
-        <nav class="nav" id="nav">
-            <button class="close-menu" id="close"><img src="./img/cross.svg" alt="cross"></button>
-            <ul class="nav-list">
-                <li id="li-ranking" class="li-ranking">Ranking</li>
-                <li><a href="./contactUs.html" target="_blank">Contact Us</a></li>
-                <li><a href="https://github.com/ramirosebes/SimonGame" target="_blank">Repository</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-
-        <section class="enterNameClass hide" id="enterName">
-            <form class="formClassClass" id="formClass">
-                <div class="form__group" id="group__name">
-                    <label for="inputName" class="form__label">Plase, enter your name.</label>
-                    <div class="form__group-input">
-                        <input type="text" name="name" id="inputName" placeholder="Name" class="form__input">
+    <body>
+        <header class="headerClass">
+            <h1 class="logo">Simon Game</h1>
+            <button id="open" class="openMenu"><img src="./img/menu.svg" alt="menu-hamburger"></button>
+            <nav class="navClass" id="navID">
+                <button class="closeMenu" id="close"><img src="./img/cross.svg" alt="cross"></button>
+                <ul class="navList">
+                    <li id="liRankingID" class="liRankingClass">Ranking</li>
+                    <li><a href="./contactUs.html" target="_blank">Contact Us</a></li>
+                    <li><a href="https://github.com/ramirosebes/SimonGame" target="_blank">Repository</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section class="enterNameClass hide" id="enterName">
+                <form class="formClass" id="formID">
+                    <div class="formGroup" id="groupName">
+                        <label for="inputName" class="formLabel">Plase, enter your name.</label>
+                        <div class="formGroupInput">
+                            <input type="text" name="name" id="inputName" placeholder="Name" class="formInput">
+                        </div>
+                        <p class="formInputError">You must complete de field.</p>
+                        <div class="formGroupBtnSend">
+                            <button id="buttonSend" class="formBtn">Start</button>
+                        </div>
                     </div>
-                    <p class="form__input-error">You must complete de field.</p>
-                    <div class="form__group-btn-send">
-                        <button id="buttonSend" class="form__btn">Start</button>
+                </form>
+            </section>
+            <section class="rankingClass hide" id="rankingID">
+                <div class="rankingModalClass" id="rankingModalID">
+                    <div class="rankingModalContent">
+                        <span class="close" id="closeRankingModal">&times;</span>
+                        <h2 class="h2Ranking">Game Ranking</h2>
+                        <table id="rankingTable">
+                            <thead>
+                                <tr>
+                                    <th>Player</th>
+                                    <th>Score</th>
+                                    <th>Level</th>
+                                    <th>Date & Time</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Rows for ranking data will be added dynamically using JavaScript -->
+                            </tbody>
+                        </table>
+                        <div class="rankingButtons">
+                            <button id="sortByScoreBtn" class="rankingBtn">Sort by Score</button>
+                            <button id="sortByDateBtn" class="rankingBtn">Sort by Date</button>
+                        </div>
                     </div>
                 </div>
-            </form>
-        </section>
-
-        <section class="ranking hide" id="ranking">
-            <div class="ranking-modal" id="rankingModal">
-                <div class="ranking-modal-content">
-                    <span class="close" id="closeRankingModal">&times;</span>
-                    <h2 class="h2-ranking">Game Ranking</h2>
-                    <table id="rankingTable">
-                        <thead>
-                            <tr>
-                                <th>Player</th>
-                                <th>Score</th>
-                                <th>Level</th>
-                                <th>Date & Time</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <!-- Rows for ranking data will be added dynamically using JavaScript -->
-                        </tbody>
-                    </table>
-                    <div class="ranking-buttons">
-                        <button id="sortByScoreBtn" class="ranking-btn">Sort by Score</button>
-                        <button id="sortByDateBtn" class="ranking-btn">Sort by Date</button>
+            </section>
+            <section class="simonGame">
+                <div>
+                    <h2 id="levelTitle">Press Start button to start.</h2>
+                        <div class="timeClass" id="timeID">
+                            00:00:00.000
+                        </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <button id="green" class="green btnSimon"></button>
+                        <button id="red" class="red btnSimon"></button>
+                    </div>
+                    <div class="row">
+                        <button id="yellow" class="yellow btnSimon"></button>
+                        <button id="blue" class="blue btnSimon"></button>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="simonGame">
-            <div>
-                <h2 id="level-title">Press Start button to start.</h2>
-                    <div class="time" id="time">
-                        00:00:00.000
+                <div class="scoreDiv">
+                    <div id="score" class="score">
+                        Score:
                     </div>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <button id="green" class="green btnSimon"></button>
-                    <button id="red" class="red btnSimon"></button>
+                    <p class="penaltyClass hide" id="penaltyID">-50</p>
                 </div>
-                <div class="row">
-                    <button id="yellow" class="yellow btnSimon"></button>
-                    <button id="blue" class="blue btnSimon"></button>
+                <div class="controls">
+                    <button id="startBtn" class="control btn">Start</button>
+                    <button id="resetBtn" class="control btn">Reset</button>
                 </div>
-            </div>
-            <div class="score-div">
-                <div id="score" class="score">
-                    Score:
-                </div>
-                <p class="penalty hide" id="penalty">-50</p>
-            </div>
-            <div class="controls">
-                <button id="startBtn" class="control btn">Start</button>
-                <button id="resetBtn" class="control btn">Reset</button>
-            </div>
-        </section>
-    </main>
-    <script src="./js/ranking.js"></script>
-    <script src="./js/modals.js"></script>
-    <script src="./js/navBar.js"></script>
-    <script src="./js/simon.js"></script>
-</body>
+            </section>
+        </main>
+        <script src="./js/ranking.js"></script>
+        <script src="./js/modals.js"></script>
+        <script src="./js/navBar.js"></script>
+        <script src="./js/simon.js"></script>
+    </body>
 </html>

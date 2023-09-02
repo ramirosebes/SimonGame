@@ -1,7 +1,7 @@
 //-------------------- Modal Enter Name --------------------
 var sectionForm = document.getElementById('enterName');
-var form = document.getElementById('formClass');
-var inputs = document.querySelectorAll('#formClass input');
+var form = document.getElementById('formID');
+var inputs = document.querySelectorAll('#formID input');
 
 var expressions = {
     name: /^(.*[a-zA-Z]){3,}/,
@@ -14,21 +14,21 @@ var fields = {
 function validateForm(e) {
 	switch (e.target.name) {
         case "name":
-            validateField(expressions.name, e.target, 'name');
+            validateField(expressions.name, e.target, 'name', 'Name');
             break;
     }
 }
 
-function validateField(expression, input, field) {
+function validateField(expression, input, field, fieldName) {
     if(expression.test(input.value)) {
-        document.getElementById(`group__${field}`).classList.remove('form__group-incorrect');
-        document.getElementById(`group__${field}`).classList.add('form__group-correct');
-        document.querySelector(`#group__${field} .form__input-error`).classList.remove('form__input-error-active');
+        document.getElementById(`group${fieldName}`).classList.remove('formGroupIncorrect');
+        document.getElementById(`group${fieldName}`).classList.add('formGroupCorrect');
+        document.querySelector(`#group${fieldName} .formInputError`).classList.remove('formInputErrorActive');
         fields[field] = true;
     } else {
-        document.getElementById(`group__${field}`).classList.add('form__group-incorrect');
-        document.getElementById(`group__${field}`).classList.remove('form__group-correct');
-        document.querySelector(`#group__${field} .form__input-error`).classList.add('form__input-error-active');
+        document.getElementById(`group${fieldName}`).classList.add('formGroupIncorrect');
+        document.getElementById(`group${fieldName}`).classList.remove('formGroupCorrect');
+        document.querySelector(`#group${fieldName} .formInputError`).classList.add('formInputErrorActive');
         fields[field] = false;
     }
 }1
@@ -43,14 +43,14 @@ var buttonSend = document.getElementById('buttonSend');
 buttonSend.addEventListener('click', function(e) {
     if (fields.name) {
         e.preventDefault();
-        document.getElementById('group__name').classList.remove('form__group-correct');
+        document.getElementById('groupName').classList.remove('formGroupCorrect');
         
         fields.name = false; //Validacion para que al apretar restart y luego ingresar de nuevo el formulario no te deje mandarlo de una
 
         //----- Codigo simon.js -----
         if (!started) {
             sectionForm.classList.add('hide');
-            document.getElementById("level-title").textContent = "Level " + level;
+            document.getElementById("levelTitle").textContent = "Level " + level;
             started = true;
             setTimeout(function() {
                 nextSequence();
@@ -66,8 +66,8 @@ buttonSend.addEventListener('click', function(e) {
         
     } else {
         e.preventDefault(); //evita que haga la funcion degault de submit
-        document.getElementById(`group__name`).classList.add('form__group-incorrect');
-        document.getElementById(`group__name`).classList.remove('form__group-correct');
-        document.querySelector(`#group__name .form__input-error`).classList.add('form__input-error-active');
+        document.getElementById(`groupName`).classList.add('formGroupIncorrect');
+        document.getElementById(`groupName`).classList.remove('formGroupCorrect');
+        document.querySelector(`#groupName .formInputError`).classList.add('formInputErrorActive');
     }
 });

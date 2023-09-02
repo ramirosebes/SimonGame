@@ -16,26 +16,26 @@ header {
     font-size: 2rem;
 }
 
-.nav-list {
+.navList {
     list-style-type: none;
     display: flex;
     gap: 2rem;
 }
 
-.nav-list li a {
+.navList li a {
     text-decoration: none;
     color: white;
     font-family: 'Press Start 2P', cursive;
 }
 
-.li-ranking {
+.liRankingClass {
     color: white;
     font-family: 'Press Start 2P', cursive;
     cursor: pointer;
 }
 
-.open-menu,
-.close-menu {
+.openMenu,
+.closeMenu {
     display: block;
     border: 0;
     font-size: 1.25rem;
@@ -43,15 +43,15 @@ header {
     cursor: pointer;
 }
 
-.open-menu {
+.openMenu {
     color: white;
 }
 
-.close-menu {
+.closeMenu {
     color: white;
 }
 
-.nav {
+.navClass {
     opacity: 0;
     visibility: hidden;
     display: flex;
@@ -67,17 +67,17 @@ header {
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
 }
 
-.nav.visible {
+.navClass.visible {
     opacity: 1;
     visibility: visible;
 }
 
-.nav-list {
+.navList {
     flex-direction: column;
     align-items: end;
 }
 
-.nav-list li a {
+.navList li a {
     color: #ecececec;
 }
 
@@ -96,7 +96,7 @@ main {
 
 /*---------- Simon ----------*/
 
-#level-title {
+#levelTitle {
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
     margin-block: 2rem; /*margin: 3rem;*/
@@ -146,13 +146,13 @@ main {
     cursor: pointer;
 }
 
-.score-div {
+.scoreDiv {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.score-div p {
+.scoreDiv p {
     font-family: 'Press Start 2P', cursive;
     font-size: 30px;
     color: red;
@@ -175,7 +175,7 @@ main {
     background-color: #FFDF64;
 }
 
-.game-over {
+.gameOver {
     background-color: red;
     opacity: 0.8;
 }
@@ -185,13 +185,13 @@ main {
     background-color: grey;
 }
 
-.time, .score {
+.timeClass, .score {
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 30px;
 }
 
-.penalty {
+.penaltyClass {
     color: red;
 }
 
@@ -215,11 +215,11 @@ main {
     box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
 }
 
-.form__label {
+.formLabel {
     font-size: 30px;
 }
 
-.form__input {
+.formInput {
     margin-block: 20px;
     width: 500px;
     height: 50px;
@@ -229,48 +229,48 @@ main {
     border-radius: 5px;
 }
 
-.form__input:focus {
+.formInput:focus {
     border: 3px solid grey;
     box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
     outline: none;
 }
 
-.form__input-error{
+.formInputError {
     margin-bottom: 20px;
     display: none;
 }
 
-.form__input-error-active {
+.formInputErrorActive {
     display: block;
 }
 
-.form_group-corect .form__label {
+.formGroupCorrect .formLabel {
     color: #1ed12d;
 }
 
-.form__group-correct{
+.formGroupCorrect{
     color: #1ed12d;
 	opacity: 1;
 }
 
-.form__group-correct .form__input {
+.formGroupCorrect .formInput {
     border: 3px solid #1ed12d;
 }
 
-.form__group-incorrect .form__label {
+.formGroupIncorrect .formLabel {
     color: #bb2929;
 }
 
-.form__group-incorrect {
+.formGroupIncorrect {
     color: #bb2929;
 	opacity: 1;
 }
 
-.form__group-incorrect .form__input {
+.formGroupIncorrect .formInput {
     border: 3px solid #bb2929;
 }
 
-.form__btn {
+.formBtn {
     font-family: 'Press Start 2P', cursive;
     border: none;
     border-radius: 5px;
@@ -279,7 +279,7 @@ main {
 }
 
 /*---------- Ranking ---------*/
-.ranking-modal {
+.rankingModalClass {
     position: fixed;
     top: 0;
     left: 0;
@@ -289,7 +289,7 @@ main {
     z-index: 9999;
 }
 
-.ranking-modal-content {
+.rankingModalContent {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -327,7 +327,7 @@ main {
     /* background-color: #444; */
 }
 
-.h2-ranking {
+.h2Ranking {
     font-size: 30px;
     margin-bottom: 20px;
     font-family: 'Press Start 2P', cursive;
@@ -366,7 +366,7 @@ tbody tr:nth-child(odd) {
     background-color: #252525;
 }
 
-.ranking-btn {
+.rankingBtn {
     font-family: 'Press Start 2P', cursive;
     padding: 10px;
     border: none;
@@ -386,12 +386,12 @@ tbody tr:nth-child(odd) {
 /*-------------------- Media Qeuries --------------------*/
 
 @media only screen and (max-width: 768px) {
-    #level-title {
+    #levelTitle {
         font-size: 30px;
         margin-block: 1.5rem;
     }
 
-    .time, .score {
+    .timeClass, .score {
         font-size: 20px;
     }
 }
@@ -407,12 +407,12 @@ tbody tr:nth-child(odd) {
     }
 
     /*---------- Simon ---------*/
-    #level-title {
+    #levelTitle {
         font-size: 30px;
         margin-block: 2rem;
     }
 
-    .time, .score {
+    .timeClass, .score {
         font-size: 20px;
         margin-block: 1rem;
     }
@@ -424,26 +424,18 @@ tbody tr:nth-child(odd) {
     }
 
     /*---------- Modal ---------*/
-    .form__label {
+    .formLabel {
         font-size: 20px;
     }
 
-    .form__input {
+    .formInput {
         width: 330px;
     }
-
-    /*---------- Ranking ---------*/
-    /* .ranking-modal-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    } */
 }
 
 @media only screen and (max-width: 375px) {
     /*---------- Simon ---------*/
-    .time, .score {
+    .timeClass, .score {
         font-size: 20px;
         margin-block: 1rem;
     }
@@ -455,18 +447,18 @@ tbody tr:nth-child(odd) {
     }
 
     /*---------- Modal ---------*/
-    .form__label {
+    .formLabel {
         font-size: 20px;
     }
 
-    .form__input {
+    .formInput {
         width: 300px;
     }
 }
 
 @media only screen and (max-width: 320px) {
     /*---------- Simon ---------*/
-    .time, .score {
+    .timeClass, .score {
         font-size: 20px;
         margin-block: 1rem;
     }
@@ -487,11 +479,11 @@ tbody tr:nth-child(odd) {
     }
 
     /*---------- Modal ---------*/
-    .form__label {
+    .formLabel {
         font-size: 20px;
     }
 
-    .form__input {
+    .formInput {
         width: 300px;
     }
 }
