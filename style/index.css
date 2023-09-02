@@ -1,5 +1,4 @@
 /*-------------------- Header --------------------*/
-
 header {
     display: flex;
     align-items: center;
@@ -9,10 +8,9 @@ header {
 }
 
 /*---------- Nav ----------*/
-
 .logo {
     font-family: 'Press Start 2P', cursive;
-    color: white;
+    color: #ffffff;
     font-size: 2rem;
 }
 
@@ -24,12 +22,12 @@ header {
 
 .navList li a {
     text-decoration: none;
-    color: white;
+    color: #ffffff;
     font-family: 'Press Start 2P', cursive;
 }
 
 .liRankingClass {
-    color: white;
+    color: #ffffff;
     font-family: 'Press Start 2P', cursive;
     cursor: pointer;
 }
@@ -44,11 +42,11 @@ header {
 }
 
 .openMenu {
-    color: white;
+    color: #ffffff;
 }
 
 .closeMenu {
-    color: white;
+    color: #ffffff;
 }
 
 .navClass {
@@ -64,7 +62,7 @@ header {
     bottom: 0;
     background-color: #202020;
     padding: 2rem;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    box-shadow: 0 0 0 100vmax #00000080;
 }
 
 .navClass.visible {
@@ -95,11 +93,10 @@ main {
 }
 
 /*---------- Simon ----------*/
-
 #levelTitle {
     font-family: 'Press Start 2P', cursive;
     font-size: 3rem;
-    margin-block: 2rem; /*margin: 3rem;*/
+    margin-block: 2rem;
     color: white;
 }
 
@@ -125,9 +122,9 @@ main {
 .btn {
     margin: 20px;
     padding: 15px;
-    background-color: #ccc;
+    background-color: #cccccc;
     font-size: 16px;
-    color: #222;
+    color: #222222;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -155,7 +152,7 @@ main {
 .scoreDiv p {
     font-family: 'Press Start 2P', cursive;
     font-size: 30px;
-    color: red;
+    color: #ff0000;
     padding-left: 10px;
 }
 
@@ -176,7 +173,7 @@ main {
 }
 
 .gameOver {
-    background-color: red;
+    background-color: #ff0000;
     opacity: 0.8;
 }
 
@@ -185,14 +182,15 @@ main {
     background-color: grey;
 }
 
-.timeClass, .score {
-    color: white;
+.timeClass,
+.score {
+    color: #ffffff;
     font-family: 'Press Start 2P', cursive;
     font-size: 30px;
 }
 
 .penaltyClass {
-    color: red;
+    color: #ff0000;
 }
 
 /*------------------ Modal -------------------*/
@@ -206,13 +204,12 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 999;
-
     font-family: 'Press Start 2P', cursive;
     background-color: #202020;
     color: white;
     padding: 30px;
-    border-radius:10px;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    box-shadow: 0 0 0 100vmax #00000080;
 }
 
 .formLabel {
@@ -230,8 +227,8 @@ main {
 }
 
 .formInput:focus {
-    border: 3px solid grey;
-    box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+    border: 3px solid #808080;
+    box-shadow: 3px 0px 30px #a3a3a366;
     outline: none;
 }
 
@@ -248,9 +245,9 @@ main {
     color: #1ed12d;
 }
 
-.formGroupCorrect{
+.formGroupCorrect {
     color: #1ed12d;
-	opacity: 1;
+    opacity: 1;
 }
 
 .formGroupCorrect .formInput {
@@ -263,7 +260,7 @@ main {
 
 .formGroupIncorrect {
     color: #bb2929;
-	opacity: 1;
+    opacity: 1;
 }
 
 .formGroupIncorrect .formInput {
@@ -285,7 +282,7 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #000000b3;
     z-index: 9999;
 }
 
@@ -298,11 +295,10 @@ main {
     color: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    box-shadow: 0 0 0 100vmax #00000080;
     max-width: 90%;
     max-height: 90%;
     overflow-y: auto;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -321,10 +317,8 @@ main {
 }
 
 .close:hover {
-    color: #bbb;
-    /*Agregar algo mas*/
+    color: #bbbbbb;
     border-radius: 5px;
-    /* background-color: #444; */
 }
 
 .h2Ranking {
@@ -339,10 +333,11 @@ table {
     font-family: 'Press Start 2P', cursive;
 }
 
-th, td {
+th,
+td {
     padding: 10px;
     text-align: center;
-    border: 5px solid #ddd;
+    border: 5px solid #dddddd;
 }
 
 tr:last-child {
@@ -350,11 +345,11 @@ tr:last-child {
 }
 
 tr:hover {
-    background-color: #444;
+    background-color: #444444;
 }
 
 th {
-    background-color: #444;
+    background-color: #444444;
     color: white;
 }
 
@@ -371,8 +366,8 @@ tbody tr:nth-child(odd) {
     padding: 10px;
     border: none;
     border-radius: 5px;
-    color: white;
-    background-color: #444;
+    color: #ffffff;
+    background-color: #444444;
     margin-top: 15px;
     margin-inline: 10px;
     cursor: pointer;
@@ -383,15 +378,15 @@ tbody tr:nth-child(odd) {
     display: none;
 }
 
-/*-------------------- Media Qeuries --------------------*/
-
+/*-------------------- Media Queries --------------------*/
 @media only screen and (max-width: 768px) {
     #levelTitle {
         font-size: 30px;
         margin-block: 1.5rem;
     }
 
-    .timeClass, .score {
+    .timeClass,
+    .score {
         font-size: 20px;
     }
 }
@@ -412,7 +407,8 @@ tbody tr:nth-child(odd) {
         margin-block: 2rem;
     }
 
-    .timeClass, .score {
+    .timeClass,
+    .score {
         font-size: 20px;
         margin-block: 1rem;
     }
@@ -435,7 +431,8 @@ tbody tr:nth-child(odd) {
 
 @media only screen and (max-width: 375px) {
     /*---------- Simon ---------*/
-    .timeClass, .score {
+    .timeClass,
+    .score {
         font-size: 20px;
         margin-block: 1rem;
     }
@@ -458,7 +455,8 @@ tbody tr:nth-child(odd) {
 
 @media only screen and (max-width: 320px) {
     /*---------- Simon ---------*/
-    .timeClass, .score {
+    .timeClass,
+    .score {
         font-size: 20px;
         margin-block: 1rem;
     }

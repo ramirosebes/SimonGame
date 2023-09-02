@@ -8,10 +8,9 @@ header {
 }
 
 /*---------- Nav ----------*/
-
 .logo {
     font-family: 'Press Start 2P', cursive;
-    color: white;
+    color: #ffffff;
     font-size: 2rem;
 }
 
@@ -23,7 +22,7 @@ header {
 
 .navList li a {
     text-decoration: none;
-    color: white;
+    color: #ffffff;
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -36,12 +35,9 @@ header {
     cursor: pointer;
 }
 
-.openMenu {
-    color: white;
-}
-
+.openMenu,
 .closeMenu {
-    color: white;
+    color: #ffffff;
 }
 
 .navClass {
@@ -57,7 +53,7 @@ header {
     bottom: 0;
     background-color: #202020;
     padding: 2rem;
-    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, .5);
+    box-shadow: 0 0 0 100vmax #00000080;
 }
 
 .navClass.visible {
@@ -77,12 +73,11 @@ header {
 /*-------------------- Body --------------------*/
 body {
     background-color: #272727;
-    color: white;
+    color: #ffffff;
     font-family: 'Press Start 2P', cursive;
 }
 
 /*---------- Forms ----------*/
-
 main {
     display: flex;
     flex-direction: column;
@@ -143,8 +138,8 @@ form div {
 }
 
 .formInput:focus {
-    border: 3px solid grey;
-	box-shadow: 3px 0px 30px rgba(163,163,163, 0.4);
+    border: 3px solid #808080;
+    box-shadow: 3px 0px 30px #a3a3a366;
     outline: none;
 }
 
@@ -167,9 +162,9 @@ form div {
     color: #1ed12d;
 }
 
-.formGroupCorrect{
+.formGroupCorrect {
     color: #1ed12d;
-	opacity: 1;
+    opacity: 1;
 }
 
 .formGroupCorrect .formInput {
@@ -182,7 +177,7 @@ form div {
 
 .formGroupIncorrect {
     color: #bb2929;
-	opacity: 1;
+    opacity: 1;
 }
 
 .formGroupIncorrect .formInput {
@@ -193,6 +188,7 @@ form div {
 .formMessageClass p {
     margin: 0;
 }
+
 .formMessageClass {
     height: 45px;
     line-height: 45px;
@@ -210,8 +206,8 @@ form div {
 .formMessageSuccessfulClass {
     margin-top: 20px;
     font-size: 20px;
-	color: #119200;
-	display: none;
+    color: #119200;
+    display: none;
 }
 
 .formMessageSuccessfulActive {
@@ -237,14 +233,11 @@ form div {
 #buttonSend a {
     font-family: 'Press Start 2P', cursive;
     text-decoration: none;
-    color: black;
+    color: #000000;
     font-size: 12px;
 }
 
-
-
 /*-------------------- Media Queries --------------------*/
-
 @media only screen and (max-width: 425px) {
     .contactUs {
         font-size: 35px;
@@ -295,7 +288,7 @@ form div {
     }
 
     .formInputError {
-        text-align: center; 
+        text-align: center;
     }
 
     .formMessageSuccessfulClass {
