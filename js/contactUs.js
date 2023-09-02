@@ -1,18 +1,23 @@
+//-------------------- Variables --------------------
+
 var form = document.getElementById('formID');
 var inputs = document.querySelectorAll('#formID input');
 var textarea = document.querySelector('#inputTextarea')
+var buttonSend = document.getElementById('buttonSend');
 
 var expressions = {
     name: /^[a-zA-Z0-9]{1,}$/,
     email: /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/,
     textarea: /.{5,}/,
-}
+};
 
 var fields = {
     name: false,
     email: false,
     textarea: false,
-}
+};
+
+//-------------------- Functions --------------------
 
 function validateForm(e) {
 	switch (e.target.name) {
@@ -26,7 +31,7 @@ function validateForm(e) {
             validateField(expressions.textarea, e.target, 'textarea', 'Textarea');
             break;
     }
-}
+};
 
 function validateField(expression, input, field, fieldName) {
     if(expression.test(input.value)) {
@@ -40,7 +45,29 @@ function validateField(expression, input, field, fieldName) {
         document.querySelector(`#group${fieldName} .formInputError`).classList.add('formInputErrorActive');
         fields[field] = false;
     }
-}
+};
+
+function handlerContactUsButtonSend(e) {
+    if (fields.name && fields.email && fields.textarea ) {
+        form.reset();
+        fields.name = false;
+        fields.email = false;
+        fields.textarea = false
+        document.getElementById('formMessageSuccessfulID').classList.add('formMessageSuccessfulActive');
+        setTimeout(() => {
+            document.getElementById('formMessageSuccessfulID').classList.remove('formMessageSuccessfulActive');
+            document.getElementById('groupName').classList.remove('formGroupCorrect');
+            document.getElementById('groupEmail').classList.remove('formGroupCorrect');
+            document.getElementById('groupTextarea').classList.remove('formGroupCorrect');
+		}, 3000);
+        document.getElementById('formMessageID').classList.remove('formMessageActive');
+    } else {
+        e.preventDefault(); //evita que haga la funcion degault de submit
+        document.getElementById('formMessageID').classList.add('formMessageActive');
+    }
+};
+
+//-------------------- EventsLiseners --------------------
 
 inputs.forEach(function(input) {
     input.addEventListener('keyup', validateForm);
@@ -50,26 +77,4 @@ inputs.forEach(function(input) {
 textarea.addEventListener('keyup', validateForm);
 textarea.addEventListener('blur', validateForm);
 
-var buttonSend = document.getElementById('buttonSend');
-
-buttonSend.addEventListener('click', function(e) {
-    if (fields.name && fields.email && fields.textarea ) {
-        form.reset();
-
-        fields.name = false;
-        fields.email = false;
-        fields.textarea = false
-        document.getElementById('formMessageSuccessfulID').classList.add('formMessageSuccessfulActive');
-        setTimeout(() => {
-			document.getElementById('formMessageSuccessfulID').classList.remove('formMessageSuccessfulActive');
-            document.getElementById('groupName').classList.remove('formGroupCorrect');
-            document.getElementById('groupEmail').classList.remove('formGroupCorrect');
-            document.getElementById('groupTextarea').classList.remove('formGroupCorrect');
-		}, 3000);
-
-        document.getElementById('formMessageID').classList.remove('formMessageActive');
-    } else {
-        e.preventDefault(); //evita que haga la funcion degault de submit
-        document.getElementById('formMessageID').classList.add('formMessageActive');
-    }
-});
+buttonSend.addEventListener('click', handlerContactUsButtonSend);

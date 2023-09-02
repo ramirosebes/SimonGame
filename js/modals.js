@@ -1,15 +1,19 @@
-//-------------------- Modal Enter Name --------------------
+//-------------------- Variables --------------------
+
 var sectionForm = document.getElementById('enterName');
 var form = document.getElementById('formID');
 var inputs = document.querySelectorAll('#formID input');
+var buttonSend = document.getElementById('buttonSend');
 
 var expressions = {
     name: /^(.*[a-zA-Z]){3,}/,
-}
+};
 
 var fields = {
     name: false,
-}
+};
+
+//-------------------- Functions --------------------
 
 function validateForm(e) {
 	switch (e.target.name) {
@@ -17,7 +21,7 @@ function validateForm(e) {
             validateField(expressions.name, e.target, 'name', 'Name');
             break;
     }
-}
+};
 
 function validateField(expression, input, field, fieldName) {
     if(expression.test(input.value)) {
@@ -31,43 +35,38 @@ function validateField(expression, input, field, fieldName) {
         document.querySelector(`#group${fieldName} .formInputError`).classList.add('formInputErrorActive');
         fields[field] = false;
     }
-}1
+};
 
-inputs.forEach(function(input) {
-    input.addEventListener('keyup', validateForm);
-    input.addEventListener('blur', validateForm);
-});
-
-var buttonSend = document.getElementById('buttonSend');
-
-buttonSend.addEventListener('click', function(e) {
+function handlerModalSendButton(e) {
     if (fields.name) {
         e.preventDefault();
         document.getElementById('groupName').classList.remove('formGroupCorrect');
-        
-        fields.name = false; //Validacion para que al apretar restart y luego ingresar de nuevo el formulario no te deje mandarlo de una
-
-        //----- Codigo simon.js -----
+        fields.name = false;
         if (!started) {
             sectionForm.classList.add('hide');
             document.getElementById("levelTitle").textContent = "Level " + level;
             started = true;
             setTimeout(function() {
                 nextSequence();
-            }, 750); //Tiempo a que se encienda el boton
-            //----- Timer -----
+            }, 750);
             restartTime();
             startTime();
-            //----- Score -----
             userScore = 0;
             document.getElementById('score').innerHTML = "Score: " + userScore;
-            // subtractScoreEveryTenSeconds();
         }
-        
     } else {
-        e.preventDefault(); //evita que haga la funcion degault de submit
+        e.preventDefault();
         document.getElementById(`groupName`).classList.add('formGroupIncorrect');
         document.getElementById(`groupName`).classList.remove('formGroupCorrect');
         document.querySelector(`#groupName .formInputError`).classList.add('formInputErrorActive');
     }
+};
+
+//-------------------- EventsLiseners --------------------
+
+inputs.forEach(function(input) {
+    input.addEventListener('keyup', validateForm);
+    input.addEventListener('blur', validateForm);
 });
+
+buttonSend.addEventListener('click', handlerModalSendButton);

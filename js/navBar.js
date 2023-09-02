@@ -1,13 +1,21 @@
 //-------------------- Variables --------------------
+
 var nav = document.querySelector("#navID");
-var abrir = document.querySelector("#open");
-var cerrar = document.querySelector("#close");
+var open = document.querySelector("#open");
+var close = document.querySelector("#close");
 
-//--------- Eventos ---------
-abrir.addEventListener("click", function() {
+//-------------------- Functions --------------------
+
+function handlerNavBarOpenButton() {
     nav.classList.add("visible");
-});
+};
 
-cerrar.addEventListener("click", function() {
+function handlerNavBarCloseButton() {
     nav.classList.remove("visible");
-});
+};
+
+//-------------------- EventsLisener --------------------
+
+open.addEventListener("click", handlerNavBarOpenButton);
+
+close.addEventListener("click", handlerNavBarCloseButton);

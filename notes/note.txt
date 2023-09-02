@@ -1,0 +1,37 @@
+function saveGameData(gameData) {
+
+    var allGameData = JSON.parse(localStorage.getItem("allGameData")) || [];
+
+    //------------------- NO PERMITIR DUPLICADOS ------------------
+    // Buscar si ya existe un registro con el mismo nombre de jugador
+    var existingGameData = allGameData.find(function(data) {
+        return data.userName === gameData.userName;
+    });
+
+    // Si existe un registro y el nuevo puntaje es mayor, actualizar el registro
+    if (existingGameData) {
+        if (gameData.finalScore > existingGameData.finalScore) {
+            existingGameData.finalTime = gameData.finalTime;
+            existingGameData.finalScore = gameData.finalScore;
+            existingGameData.finalLevel = gameData.finalLevel;
+            existingGameData.date = gameData.date;
+        }
+    } else {
+        // Si no existe un registro con el mismo nombre, agregar el nuevo registro al array
+        allGameData.push(gameData);
+    }
+
+    // Convertir el array de datos en formato JSON y guardarla en Local Storage
+    localStorage.setItem("allGameData", JSON.stringify(allGameData));
+
+    //------------------ PERMITIR DUPLICADOS ------------------
+    // function saveGameData(gameData) {
+
+    //     var allGameData = JSON.parse(localStorage.getItem("allGameData")) || [];
+    
+    //     allGameData.push(gameData);
+
+    //     localStorage.setItem("allGameData", JSON.stringify(allGameData));
+    // }
+    
+}
