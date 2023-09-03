@@ -47,6 +47,8 @@ function validateField(expression, input, field, fieldName) {
     }
 };
 
+//---------- Handlers ----------
+
 function handlerContactUsButtonSend(e) {
     if (fields.name && fields.email && fields.textarea ) {
         form.reset();

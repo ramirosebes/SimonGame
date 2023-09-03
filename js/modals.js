@@ -37,6 +37,8 @@ function validateField(expression, input, field, fieldName) {
     }
 };
 
+//---------- Handlers ----------
+
 function handlerModalSendButton(e) {
     if (fields.name) {
         e.preventDefault();

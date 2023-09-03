@@ -6,6 +6,8 @@ var close = document.querySelector("#close");
 
 //-------------------- Functions --------------------
 
+//---------- Handlers ----------
+
 function handlerNavBarOpenButton() {
     nav.classList.add("visible");
 };
