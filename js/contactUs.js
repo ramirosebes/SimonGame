@@ -1,9 +1,9 @@
 //-------------------- Variables --------------------
 
-var form = document.getElementById('formID');
+var form = document.querySelector('#formID');
 var inputs = document.querySelectorAll('#formID input');
 var textarea = document.querySelector('#inputTextarea')
-var buttonSend = document.getElementById('buttonSend');
+var buttonSend = document.querySelector('#buttonSend');
 
 var expressions = {
     name: /^[a-zA-Z0-9]{1,}$/,
@@ -35,13 +35,13 @@ function validateForm(e) {
 
 function validateField(expression, input, field, fieldName) {
     if(expression.test(input.value)) {
-        document.getElementById(`group${fieldName}`).classList.remove('formGroupIncorrect');
-        document.getElementById(`group${fieldName}`).classList.add('formGroupCorrect');
+        document.querySelector(`#group${fieldName}`).classList.remove('formGroupIncorrect');
+        document.querySelector(`#group${fieldName}`).classList.add('formGroupCorrect');
         document.querySelector(`#group${fieldName} .formInputError`).classList.remove('formInputErrorActive');
         fields[field] = true;
     } else {
-        document.getElementById(`group${fieldName}`).classList.add('formGroupIncorrect');
-        document.getElementById(`group${fieldName}`).classList.remove('formGroupCorrect');
+        document.querySelector(`#group${fieldName}`).classList.add('formGroupIncorrect');
+        document.querySelector(`#group${fieldName}`).classList.remove('formGroupCorrect');
         document.querySelector(`#group${fieldName} .formInputError`).classList.add('formInputErrorActive');
         fields[field] = false;
     }
@@ -55,17 +55,17 @@ function handlerContactUsButtonSend(e) {
         fields.name = false;
         fields.email = false;
         fields.textarea = false
-        document.getElementById('formMessageSuccessfulID').classList.add('formMessageSuccessfulActive');
+        document.querySelector('#formMessageSuccessfulID').classList.add('formMessageSuccessfulActive');
         setTimeout(() => {
-            document.getElementById('formMessageSuccessfulID').classList.remove('formMessageSuccessfulActive');
-            document.getElementById('groupName').classList.remove('formGroupCorrect');
-            document.getElementById('groupEmail').classList.remove('formGroupCorrect');
-            document.getElementById('groupTextarea').classList.remove('formGroupCorrect');
+            document.querySelector('#formMessageSuccessfulID').classList.remove('formMessageSuccessfulActive');
+            document.querySelector('#groupName').classList.remove('formGroupCorrect');
+            document.querySelector('#groupEmail').classList.remove('formGroupCorrect');
+            document.querySelector('#groupTextarea').classList.remove('formGroupCorrect');
 		}, 3000);
-        document.getElementById('formMessageID').classList.remove('formMessageActive');
+        document.querySelector('#formMessageID').classList.remove('formMessageActive');
     } else {
         e.preventDefault(); //evita que haga la funcion degault de submit
-        document.getElementById('formMessageID').classList.add('formMessageActive');
+        document.querySelector('#formMessageID').classList.add('formMessageActive');
     }
 };
 

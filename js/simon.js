@@ -8,7 +8,7 @@ var level = 0;
 var userScore = 0;
 var totalScore = 0;
 var userName = " ";
-var form = document.getElementById('formID');
+var form = document.querySelector('#formID');
 var buttons = document.querySelectorAll(".btnSimon");
 var timeRef = Date.now();
 var timeCount = false;
@@ -32,7 +32,7 @@ function checkAnswer(currentLevel) {
         setTimeout(function() {
             document.body.classList.remove("gameOver");
         }, 750);
-        document.getElementById("levelTitle").textContent = "Game over, Press start button to Restart.";
+        document.querySelector("#levelTitle").textContent = "Game over, Press start button to Restart.";
         stopTime();
         startOver();
     }
@@ -41,7 +41,7 @@ function checkAnswer(currentLevel) {
 function nextSequence() {
     userClickedPattern = [];
     level++;
-    document.getElementById("levelTitle").textContent = "Level " + level;
+    document.querySelector("#levelTitle").textContent = "Level " + level;
     var randomNumber = Math.floor(Math.random() * 4);
     var randomChosenColor = buttonColors[randomNumber];
     gamePattern.push(randomChosenColor);
@@ -69,8 +69,8 @@ function playSound(name) {
 
 function startOver() {
     var gameData = {
-        userName: document.getElementById('inputName').value,
-        finalTime: document.getElementById('timeID').textContent,
+        userName: document.querySelector('#inputName').value,
+        finalTime: document.querySelector('#timeID').textContent,
         finalScore: userScore,
         finalLevel: level,
         date: Date.now()
@@ -99,7 +99,7 @@ function restartTime() {
 };
 
 setInterval(function() {
-    var time = document.getElementById("timeID");
+    var time = document.querySelector("#timeID");
     if (timeCount) {
         accumulated += Date.now() - timeRef;
     }
@@ -132,7 +132,7 @@ function startSubtractingScore() {
     stopSubtractingScore();
     intervalId = setInterval(function() {
     userScore -= 50;
-    document.getElementById('score').innerHTML = "Score: " + userScore;
+    document.querySelector('#score').innerHTML = "Score: " + userScore;
     showPenalty();
     }, 10000);
 };
@@ -145,14 +145,14 @@ function stopSubtractingScore() {
 
 function handlerSimonStartButton() {
     if (!started) {
-        var sectionForm = document.getElementById('enterNameID');
+        var sectionForm = document.querySelector('#enterNameID');
         sectionForm.classList.remove('hide');
     }
 };
 
 function handlerSimonResetButton() {
     if (started) {
-        document.getElementById("levelTitle").textContent = "Press Start button to start.";
+        document.querySelector("#levelTitle").textContent = "Press Start button to start.";
         userClickedPattern = [];
         gamePattern = [];
         level = 0;
@@ -161,7 +161,7 @@ function handlerSimonResetButton() {
         restartTime();
         form.reset();
         userScore = 0;
-        document.getElementById('score').innerHTML = "Score: " + userScore;
+        document.querySelector('#score').innerHTML = "Score: " + userScore;
         stopSubtractingScore();
     }
 };
@@ -176,16 +176,16 @@ function handlerSimonColorsButtons() {
         var bodyElement = document.body;
         if (!bodyElement.classList.contains("gameOver")) {
             userScore += 100;
-            document.getElementById('score').innerHTML = "Score: " + userScore;
+            document.querySelector('#score').innerHTML = "Score: " + userScore;
         }
     }
 };
 
 //-------------------- EventsLiseners --------------------
 
-document.getElementById("startBtn").addEventListener("click", handlerSimonStartButton);
+document.querySelector("#startBtn").addEventListener("click", handlerSimonStartButton);
 
-document.getElementById("resetBtn").addEventListener("click", handlerSimonResetButton);
+document.querySelector("#resetBtn").addEventListener("click", handlerSimonResetButton);
 
 for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener("click", handlerSimonColorsButtons);

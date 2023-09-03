@@ -1,6 +1,6 @@
 //-------------------- Variables --------------------
-var rankingBtn = document.getElementById('liRankingID');
-var closeRanking = document.getElementById('closeRankingModal');
+var rankingBtn = document.querySelector('#liRankingID');
+var closeRanking = document.querySelector('#closeRankingModal');
 
 //-------------------- Functions --------------------
 
@@ -23,7 +23,7 @@ function saveGameData(gameData) {
 };
 
 function loadRankingData() {
-    var rankingTable = document.getElementById("rankingTable");
+    var rankingTable = document.querySelector("#rankingTable");
     var allGameData = JSON.parse(localStorage.getItem("allGameData")) || [];
     allGameData.forEach(function (data) {
         data.date = new Date(data.date);
@@ -46,7 +46,7 @@ function loadRankingData() {
 };
 
 function clearRankingTable() {
-    var rankingTable = document.getElementById("rankingTable");
+    var rankingTable = document.querySelector("#rankingTable");
     var rowCount = rankingTable.rows.length;
     for (var i = 1; i < rowCount; i++) {
         rankingTable.deleteRow(1);
@@ -59,7 +59,7 @@ function orderByDateDescending() {
         return b.date - a.date;
     });
     clearRankingTable();
-    var rankingTable = document.getElementById("rankingTable");
+    var rankingTable = document.querySelector("#rankingTable");
     for (var i = 0; i < allGameData.length; i++) {
         var row = rankingTable.insertRow();
         var playerCell = row.insertCell(0);
@@ -90,14 +90,14 @@ function formatDate(date) {
 //---------- Handlers ----------
 
 function handlerRainkingOpenButton() {
-    var sectionRanking = document.getElementById('rankingID');
+    var sectionRanking = document.querySelector('#rankingID');
     sectionRanking.classList.remove("hide");
     clearRankingTable();
     loadRankingData();
 };
 
 function handlerRankingCloseButton() {
-    var sectionRanking = document.getElementById('rankingID');
+    var sectionRanking = document.querySelector('#rankingID');
     sectionRanking.classList.add("hide");
     clearRankingTable();
 };
@@ -122,6 +122,6 @@ rankingBtn.addEventListener("click", handlerRainkingOpenButton);
 
 closeRanking.addEventListener("click", handlerRankingCloseButton);
 
-document.getElementById("sortByScoreBtn").addEventListener("click", handlerRankingSortByScoreButton);
+document.querySelector("#sortByScoreBtn").addEventListener("click", handlerRankingSortByScoreButton);
 
-document.getElementById("sortByDateBtn").addEventListener("click", handlerRankingSortByDateButton);
+document.querySelector("#sortByDateBtn").addEventListener("click", handlerRankingSortByDateButton);
