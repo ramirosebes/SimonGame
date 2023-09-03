@@ -145,7 +145,7 @@ function stopSubtractingScore() {
 
 function handlerSimonStartButton() {
     if (!started) {
-        var sectionForm = document.getElementById('enterName');
+        var sectionForm = document.getElementById('enterNameID');
         sectionForm.classList.remove('hide');
     }
 };

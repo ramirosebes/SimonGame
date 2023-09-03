@@ -1,6 +1,6 @@
 //-------------------- Variables --------------------
 
-var sectionForm = document.getElementById('enterName');
+var sectionForm = document.getElementById('enterNameID');
 var form = document.getElementById('formID');
 var inputs = document.querySelectorAll('#formID input');
 var buttonSend = document.getElementById('buttonSend');
